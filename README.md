@@ -6,7 +6,7 @@
 |------|----|-------|
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
-|encrypted_password|string|null: false|
+|user_password|string|null: false|
 |user_image|string|
 |introduction|text|
 |family_name|string|null: false|
@@ -19,8 +19,8 @@
 ### Association
 
 - has_many :products dependent: :destroy
-- belongs_to :destination dependent: :destroy
-- belongs_to :card dependent: :destroy
+- has_one :destination dependent: :destroy
+- has_one :card dependent: :destroy
 
 
 ## destination_table
