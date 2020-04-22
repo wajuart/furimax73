@@ -4,7 +4,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |encrypted_password|string|null: false|
@@ -15,7 +14,6 @@
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birth_day|date|null: false|
-<!-- id のカラムを追加 いらないかも？ -->
 <!-- email に unique: true を追加 -->
 
 ### Association
