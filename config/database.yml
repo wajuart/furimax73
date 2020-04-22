@@ -47,8 +47,16 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   database: furimax73_production
+#   username: root            #rootに変更
+#   password: <%= ENV['DATABASE_PASSWORD'] %> #chat-spadeで使った変数
+#   socket: /var/lib/mysql/mysql.sock #必須の指定
+
 production:
   <<: *default
   database: furimax73_production
-  username: furimax73
-  password: <%= ENV['FURIMAX73_DATABASE_PASSWORD'] %>
+  username: root            #rootに変更
+  password: <%= ENV['DATABASE_PASSWORD'] %> #chat-spadeで使った変数
+  socket: /var/lib/mysql/mysql.sock #必須の指定
