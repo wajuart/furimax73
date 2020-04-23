@@ -88,10 +88,10 @@
 
 ### Association
 
-- belongs_to :user dependent: :destroy
-- belongs_to :category dependent: :destroy
-- belongs_to :brand dependent: :destroy
-- has_many :images dependent: :destroy
+- belongs_to :user
+- belongs_to :category
+- belongs_to :brand
+- has_many :images
 - belongs_to_active_hash :prefecture
 
 
