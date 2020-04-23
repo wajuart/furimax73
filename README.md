@@ -14,7 +14,6 @@
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birth_day|date|null: false|
-<!-- email に unique: true を追加 -->
 
 ### Association
 
@@ -27,7 +26,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|string|null: false, foreign_key: true|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
@@ -48,7 +47,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|string|null: false, foreign_key: true|
 |customer_id|string|null: false|
 |card_id|string|null: false|
 
@@ -63,7 +62,6 @@
 |------|----|-------|
 |name|string|null: false|
 |ancestry|string|
-<!-- ancestryは、gem ancestryを使用するため。 -->
 
 ### Association
 
@@ -81,12 +79,12 @@
 |size|string|null: false|
 |shipping_cost|string|null: false|
 |shipping_days|string|null: false|
-|prefecture_id|string|null: false|
+|prefecture_id|integer|null: false|
 |judgment|string|
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|null: false, foreign_key: true|
 |shipping_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|string|null: false, foreign_key: true|
 
 ### Association
 
