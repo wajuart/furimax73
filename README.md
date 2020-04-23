@@ -26,7 +26,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
@@ -47,7 +47,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |customer_id|string|null: false|
 |card_id|string|null: false|
 
@@ -84,7 +84,7 @@
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|null: false, foreign_key: true|
 |shipping_id|integer|null: false, foreign_key: true|
-|user_id|string|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 
