@@ -9,8 +9,8 @@
         %br
         フリマアプリです
       .contents__btn
-        = link_to image_tag("/assets/icon/appstore.svg", class:"a-btn"), root_path
-        = link_to image_tag("/assets/icon/google-play.svg", class:"g-btn"), root_path
+        = link_to image_tag(asset_path("icon/appstore.svg"), class:"a-btn"), root_path
+        = link_to image_tag(asset_path("icon/google-play.svg"), class:"g-btn"), root_path
 
   %section.top-view__reason
     %h2.title
@@ -19,7 +19,7 @@
       %li.list
         .list__pict
           %span.number 1
-          = image_tag "/assets/pict/pict-reason-01.jpg"
+          = image_tag asset_path("pict/pict-reason-01.jpg")
         %h3.list__text
           %span 3分
           ですぐに出品
@@ -28,7 +28,7 @@
       %li.list
         .list__pict
           %span.number 2
-          = image_tag "/assets/pict/pict-reason-02.jpg"
+          = image_tag asset_path("pict/pict-reason-02.jpg")
         %h3.list__text
           %span シンプル
           で使いやすい
@@ -37,7 +37,7 @@
       %li.list
         .list__pict
           %span.number 3
-          = image_tag "/assets/pict/pict-reason-03.jpg"
+          = image_tag asset_path("pict/pict-reason-03.jpg")
         %h3.list__text
           手数料
           %span 業界最安
@@ -56,8 +56,8 @@
           %br
           欲しかったあの商品に出会えるかもしれません。
         .btn
-          = link_to image_tag("/assets/icon/appstore.svg", class:"a-btn"), root_path
-          = link_to image_tag("/assets/icon/google-play.svg", class:"g-btn"), root_path
+          = link_to image_tag(asset_path("icon/appstore.svg"), class:"a-btn"), root_path
+          = link_to image_tag(asset_path("icon/google-play.svg"), class:"g-btn"), root_path
 
   %section.top-view__feature
     %h2.head
@@ -65,21 +65,21 @@
     .lists
       %section.list
         %figure.list__img
-          = image_tag "/assets/icon/icon-01.png"
+          = image_tag asset_path("icon/icon-01.png")
         %h3.list__title
           簡単に売り買いできる
         %p.list__detail
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       %section.list
         %figure.list__img
-          = image_tag "/assets/icon/icon-02.png"
+          = image_tag asset_path("icon/icon-02.png")
         %h3.list__title
           売上金は即日振込に対応
         %p.list__detail
           午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
       %section.list
         %figure.list__img
-          = image_tag "/assets/icon/icon-03.png"
+          = image_tag asset_path("icon/icon-03.png")
         %h3.list__title
           様々な支払いに対応
         %p.list__detail
@@ -97,7 +97,7 @@
         .list
           = link_to "/" do
             %figure.list-img
-              =image_tag "/assets/pict/a007.png"
+              =image_tag asset_path("pict/a007.png")
             .list-body
               %h3.name
                 product3
@@ -113,7 +113,7 @@
         .list
           = link_to "/" do
             %figure.list-img
-              =image_tag "/assets/pict/a007.png"
+              =image_tag asset_path("pict/a007.png")
             .list-body
               %h3.name
                 product3
@@ -129,7 +129,7 @@
         .list
           = link_to "/" do
             %figure.list-img
-              =image_tag "/assets/pict/a007.png"
+              =image_tag asset_path("pict/a007.png")
             .list-body
               %h3.name
                 product3
@@ -155,7 +155,7 @@
         .list
           = link_to "/" do
             %figure.list-img
-              =image_tag "/assets/pict/a007.png"
+              =image_tag asset_path("pict/a007.png")
             .list-body
               %h3.name
                 product3
@@ -171,7 +171,7 @@
         .list
           = link_to "/" do
             %figure.list-img
-              =image_tag "/assets/pict/a007.png"
+              =image_tag asset_path("pict/a007.png")
             .list-body
               %h3.name
                 product3
@@ -187,7 +187,7 @@
         .list
           = link_to "/" do
             %figure.list-img
-              =image_tag "/assets/pict/a007.png"
+              =image_tag asset_path("pict/a007.png")
             .list-body
               %h3.name
                 product3
@@ -208,5 +208,5 @@
     %p.contents__text
       今すぐ無料ダウンロード！
     .contents__icon
-      = link_to image_tag("/assets/icon/appstore.svg", class:"a-btn"), root_path
-      = link_to image_tag("/assets/icon/google-play.svg", class:"g-btn"), root_path
+      = link_to image_tag(asset_path("icon/appstore.svg"), class:"a-btn"), root_path
+      = link_to image_tag(asset_path("icon/google-play.svg"), class:"g-btn"), root_path
