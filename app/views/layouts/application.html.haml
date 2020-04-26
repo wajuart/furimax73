@@ -7,5 +7,90 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    hallolllll
+
+    .Header
+      .HeaderInner
+        .HeaderMain
+          .HeaderMain__logo
+            = link_to root_path do
+              = image_tag src="/assets//logo/logo.png"
+              
+          .HeaderMain__search-box
+            .HeaderMain__search-box__input
+              キーワードから探す         
+            .HeaderMain__search-box__decision
+              .search-icon
+                = link_to root_path do
+                  = image_tag src="/assets//icon/icon-search 1.png"
+        .HeaderNav
+          %ul.HeaderNav__lists--left
+            %li.list--left
+              = link_to root_path do
+                カテゴリー
+            %li.list--right
+              = link_to root_path do
+                ブランド
+          %ul.HeaderNav__lists--right
+            %li.list--left
+              = link_to root_path do
+                ログイン
+            %li.list--right
+              = link_to root_path do
+                新規会員登録
+
+
+    .footer
+      %ul.contents
+        %li.content
+          %h2.content__head
+            FURIMAについて
+          %ul.content__list
+            %li
+              = link_to root_path do
+                会社概要（運営会社）
+            %li
+              = link_to root_path do
+                プライバシーポリシー
+            %li
+              = link_to root_path do
+                FURIMA利用規約
+            %li
+              = link_to root_path do
+                ポイントに関する特約
+        %li.content
+          %h2.content__head
+            FURIMAを見る
+          %ul.content__list
+            %li
+              = link_to root_path do
+                カテゴリー一覧
+            %li
+              = link_to root_path do
+                ブランド一覧
+        %li.content
+          %h2.content__head
+            ヘルプ&ガイド
+          %ul.content__list
+            %li
+              = link_to root_path do
+                FURIMAガイド
+            %li
+              = link_to root_path do
+                FURIMAロゴ利用ガイドライン
+      .footer__logo
+        = link_to root_path do
+          = image_tag src="/assets//logo/logo-white.png"
+      %p
+        &copy; FURIMA
+      .sell-btn
+        = link_to root_path do
+          %span.sell-btn__text
+            出品する
+          = image_tag src="/assets//icon/icon_camera.png"     
+                    
+
+
+
+
+
     = yield
