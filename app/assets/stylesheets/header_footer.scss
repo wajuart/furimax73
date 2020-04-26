@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+.Header {
+  // background-color: #f4fdbf;
+  height: 100px;
+  padding: 0 60px;
+  .HeaderInner {
+    // background-color: hsl(44, 94%, 87%);
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    .HeaderMain {
+      // background-color: #a0f7ac;
+      height: 50px;
+      // position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__logo img{
+        height: 40px;
+        width: 141px;
+        margin: 5px 30px 0 0;
+      }
+      &__search-box {
+        height: 30px;
+        width: 900px;
+        display: flex;
+        &__input {
+          height: 36px;
+          width: 840px;
+          color: rgb(124, 124, 124);
+          border: solid thin rgb(202, 201, 201);
+          line-height: 36px;
+          padding-left: 5px;
+        }
+        &__decision {
+          background-color: #3CCACE;
+          height: 36px;
+          width: 36px;
+          padding: 8px;
+        }
+          .search-icon img {
+            height: 20px;
+            width: 20px;
+          }
+      }
+    }
+    .HeaderNav {
+      // background-color: #bab2fc;
+      color: #333;
+      font-size: 14px;
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      &__lists--left {
+        display: flex;
+        .list--left {
+          margin-right: 46px;
+        }
+        .list--right {
+        }
+      }
+      &__lists--right {
+        display: flex;
+        .list--left {
+          margin-right: 46px;     
+        }
+        .list--right {
+
+        }
+      }
+    }
+
+  }
+}
+
+
+.footer {
+  padding: 60px 0;
+  color: #fff;
+  background-color: #2a2b2a;
+  text-align: center;
+  .contents {
+    // max-width: 840px;
+    // margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    .content {
+      margin: 0 70px;
+      display: flex;
+      flex-direction: column;
+      &__head {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      &__list {
+        font-size: 12px;
+        li {
+          margin-bottom: 15px;
+        } 
+        
+      }
+    }
+    
+  }
+  .footer__logo {
+    width: 100%;
+    vertical-align: bottom;
+    margin-top: 10px;
+    img {
+      height: 46px;
+      width: 160px;
+      vertical-align: bottom;
+    }
+  }
+  p {
+    font-size: 14px;
+  }
+  .sell-btn {
+    height: 120px;
+    width: 120px;
+    background: #3CCACE;
+    text-align: center;
+    border-radius: 4%;
+    right: 32px;
+    bottom: 510px;
+    // margin-bottom: 64px;
+    position: fixed;
+    padding: 15px;
+    img {
+      margin-top: 5px;
+      height: 54px;
+      width: 54px;
+    }
+  }
+}
