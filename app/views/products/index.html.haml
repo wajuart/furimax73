@@ -9,10 +9,8 @@
         %br
         フリマアプリです
       .contents__btn
-        %a.a-btn{ href: '#'}
-          = image_tag src="/assets/icon/appstore.svg"
-        %a.g-btn{ href: '#'}
-          = image_tag src="/assets/icon/google-play.svg"
+        = link_to image_tag("/assets/icon/appstore.svg", class:"a-btn"), root_path
+        = link_to image_tag("/assets/icon/google-play.svg", class:"g-btn"), root_path
 
   %section.top-view__reason
     %h2.title
@@ -58,10 +56,8 @@
           %br
           欲しかったあの商品に出会えるかもしれません。
         .btn
-          %a.a-btn{ href: '#'}
-            = image_tag src="/assets/icon/appstore.svg"
-          %a.g-btn{ href: '#'}
-            = image_tag src="/assets/icon/google-play.svg"
+          = link_to image_tag("/assets/icon/appstore.svg", class:"a-btn"), root_path
+          = link_to image_tag("/assets/icon/google-play.svg", class:"g-btn"), root_path
 
   %section.top-view__feature
     %h2.head
@@ -94,12 +90,12 @@
       ピックアップカテゴリー
     .products
       .products__head
-        %a{href: "#"}
+        = link_to "/" do
           %h3.title
             新規投稿商品
       .products__lists
         .list
-          %a{href: "#"}
+          = link_to "/" do
             %figure.list-img
               =image_tag src="/assets/pict/a007.png"
             .list-body
@@ -115,7 +111,7 @@
                   %p
                     (税込)
         .list
-          %a{href: "#"}
+          = link_to "/" do
             %figure.list-img
               =image_tag src="/assets/pict/a007.png"
             .list-body
@@ -131,7 +127,7 @@
                   %p
                     (税込)
         .list
-          %a{href: "#"}
+          = link_to "/" do
             %figure.list-img
               =image_tag src="/assets/pict/a007.png"
             .list-body
@@ -152,12 +148,12 @@
       ピックアップブランド
     .products
       .products__head
-        %a{href: "#"}
+        = link_to "/" do
           %h3.title
             アーカイブ
       .products__lists
         .list
-          %a{href: "#"}
+          = link_to "/" do
             %figure.list-img
               =image_tag src="/assets/pict/a007.png"
             .list-body
@@ -173,7 +169,7 @@
                   %p
                     (税込)
         .list
-          %a{href: "#"}
+          = link_to "/" do
             %figure.list-img
               =image_tag src="/assets/pict/a007.png"
             .list-body
@@ -189,7 +185,7 @@
                   %p
                     (税込)
         .list
-          %a{href: "#"}
+          = link_to "/" do
             %figure.list-img
               =image_tag src="/assets/pict/a007.png"
             .list-body
@@ -212,7 +208,5 @@
     %p.contents__text
       今すぐ無料ダウンロード！
     .contents__icon
-      %a.a-btn{ href: '#'}
-        = image_tag src="/assets/icon/appstore.svg"
-      %a.g-btn{ href: '#'}
-        = image_tag src="/assets/icon/google-play.svg"
+      = link_to image_tag("/assets/icon/appstore.svg", class:"a-btn"), root_path
+      = link_to image_tag("/assets/icon/google-play.svg", class:"g-btn"), root_path
