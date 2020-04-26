@@ -4,7 +4,7 @@
 
 
 .Header {
-  height: 100px;
+  height: 110px;
   padding: 0 60px;
   .HeaderInner {
     max-width: 1040px;
@@ -57,16 +57,11 @@
           .list--left {
             margin-right: 46px;
           }
-          .list--right {
-          }
         }
         &__lists--right {
           display: flex;
           .list--left {
             margin-right: 46px;     
-          }
-          .list--right {
-
           }
         }
       }
@@ -122,8 +117,8 @@
     background: #3CCACE;
     text-align: center;
     border-radius: 4%;
+    bottom: 32px;
     right: 32px;
-    bottom: 510px;
     position: fixed;
     padding: 15px;
     img {
@@ -137,15 +132,20 @@
 .HeaderNav a {
   color: #333;
   text-decoration: none;
-  // line-height: 32px;
-  // background-size: 18px;
-  // padding-right: 30px;
   font-size: 14px;
   margin: 10px 0;
+  &:hover {
+    color: rgb(250, 120, 44);
+    font-weight: bold;
+  }
 }
-
 
 .footer a {
   color: #fff;
   text-decoration: none;
+  &:hover {
+    color: rgb(161, 160, 159);
+    font-weight: bold;
+  }
 }
+
