@@ -38,6 +38,7 @@
               = link_to root_path do
                 新規会員登録
 
+    = yield
 
     .footer
       %ul.contents
@@ -87,10 +88,4 @@
           %span.sell-btn__text
             出品する
           = image_tag src="/assets//icon/icon_camera.png"     
-                    
-
-
-
-
-
-    = yield
+                  
