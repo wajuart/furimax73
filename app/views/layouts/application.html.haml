@@ -12,27 +12,31 @@
       .HeaderInner
         .HeaderMain
           .HeaderMain__logo
-            = image_tag src="/assets//logo/logo.png"
+            = link_to root_path do
+              = image_tag src="/assets//logo/logo.png"
+              
           .HeaderMain__search-box
             .HeaderMain__search-box__input
-              キーワードから探す
-            -# = form_with(url: search_products_path, local: true, method: :get, class: "search-form") do |form|
-            -#   = form.text_field :keyword, placeholder: “キーワードから探す”, class: "search-input"
-            -#   = form.submit "検索", class: "search-btn"            
+              キーワードから探す         
             .HeaderMain__search-box__decision
               .search-icon
-                = image_tag src="/assets//icon/icon-search 1.png"
+                = link_to root_path do
+                  = image_tag src="/assets//icon/icon-search 1.png"
         .HeaderNav
           %ul.HeaderNav__lists--left
             %li.list--left
-              カテゴリー
+              = link_to root_path do
+                カテゴリー
             %li.list--right
-              ブランド
+              = link_to root_path do
+                ブランド
           %ul.HeaderNav__lists--right
             %li.list--left
-              ログイン
+              = link_to root_path do
+                ログイン
             %li.list--right
-              新規会員登録
+              = link_to root_path do
+                新規会員登録
 
 
     .footer
@@ -42,37 +46,47 @@
             FURIMAについて
           %ul.content__list
             %li
-              会社概要（運営会社）
+              = link_to root_path do
+                会社概要（運営会社）
             %li
-              プライバシーポリシー
+              = link_to root_path do
+                プライバシーポリシー
             %li
-              FURIMA利用規約
+              = link_to root_path do
+                FURIMA利用規約
             %li
-            ポイントに関する特約
+              = link_to root_path do
+                ポイントに関する特約
         %li.content
           %h2.content__head
             FURIMAを見る
           %ul.content__list
             %li
-              カテゴリー一覧
+              = link_to root_path do
+                カテゴリー一覧
             %li
-              ブランド一覧
+              = link_to root_path do
+                ブランド一覧
         %li.content
           %h2.content__head
             ヘルプ&ガイド
           %ul.content__list
             %li
-              FURIMAガイド
+              = link_to root_path do
+                FURIMAガイド
             %li
-              FURIMAロゴ利用ガイドライン
+              = link_to root_path do
+                FURIMAロゴ利用ガイドライン
       .footer__logo
-        = image_tag src="/assets//logo/logo-white.png"
+        = link_to root_path do
+          = image_tag src="/assets//logo/logo-white.png"
       %p
         &copy; FURIMA
       .sell-btn
-        %span.sell-btn__text
-          出品する
-        = image_tag src="/assets//icon/icon_camera.png"     
+        = link_to root_path do
+          %span.sell-btn__text
+            出品する
+          = image_tag src="/assets//icon/icon_camera.png"     
                     
 
 
