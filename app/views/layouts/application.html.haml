@@ -17,10 +17,10 @@
               
           .HeaderMain__search-box
             .HeaderMain__search-box__input
-              キーワードから探す         
-            .HeaderMain__search-box__decision
-              .search-icon
-                = link_to root_path do
+              キーワードから探す
+            = link_to root_path do           
+              .HeaderMain__search-box__decision
+                .search-icon
                   = image_tag src="/assets//icon/icon-search 1.png"
         .HeaderNav
           %ul.HeaderNav__lists--left
@@ -83,8 +83,8 @@
           = image_tag src="/assets//logo/logo-white.png"
       %p
         &copy; FURIMA
-      .sell-btn
-        = link_to root_path do
+      = link_to root_path do  
+        .sell-btn
           %span.sell-btn__text
             出品する
           = image_tag src="/assets//icon/icon_camera.png"     
