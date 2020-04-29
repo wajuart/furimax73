@@ -85,12 +85,12 @@ ActiveRecord::Schema.define(version: 2020_04_28_081925) do
     t.datetime "updated_at", null: false
     t.string "user_image"
     t.text "introduction"
-    t.string "family_name"
-    t.string "first_name"
-    t.string "family_name_kana"
-    t.string "first_name_kana"
+    t.string "family_name", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "family_name_kana", default: "", null: false
+    t.string "first_name_kana", default: "", null: false
     t.string "nickname", default: "", null: false
-    t.date "birth_day"
+    t.date "birth_day", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
