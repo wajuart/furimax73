@@ -18,11 +18,20 @@
       .single-container__buy-item-content__payment-amount__box
         ¥1000
     .single-container__buy-item-content__payment-how
-      %h2支払い方法
-      .textbox-how
+      .upper-contents
+        %h2支払い方法
+        %a 変更する
+      .low-contents
+        %p クレジットカード
+        %p.card-info xxxxxxxxx
     .single-container__buy-item-content__shipping-address
-      %h2送り先
-      .textbox-address
+      .upper-contents
+        %h2送り先
+        %a 変更する
+      .low-contents
+        %p.post-number 〒 999-9999
+        %p.address 愛知県名古屋市
+        %p.buyer 山田太郎
     %a{class: "single-container__buy-item-content__purchase-btn"}
       %h2{class: "purchase"}
         購入する
