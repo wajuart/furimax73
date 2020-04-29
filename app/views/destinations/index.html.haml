@@ -1,25 +1,28 @@
-.single-header
-  = image_tag asset_path ("logo/logo.png")
+.single-container
+  .single-header
+    = image_tag asset_path ("logo/logo.png")
 
-.l-single-container_buy-item-container
-  %h2{class: "l-singlehead_buy-head"}
-    購入内容の確認
-  .buy-content_buy-item
-    .buy-content-inner
-      .buy-item-box
-        .buy-item-image
-          image
-        .buy-item-detail
-          .product-name
-            product1
-          .product-price
-            1000¥
-  .confirmation__payment-amount 
-    %h2支払い金額
-    .confirmation__payment-amount__box
-  .confirmation__payment-how
-    支払い方法
-  .confirmation__shipping-address
-    送り先
-  %a{class: "confirmation__purchase-btn"}
-    購入する
+  .single-container__buy-item-content
+    %h2{class: "buy-head"}
+      購入内容の確認
+    .single-container__buy-item-content__buy-item
+      .buy-item-image
+        image
+      .buy-item-detail
+        .product-name
+          product1
+        .product-price
+          ¥1000 (税込み) 送料込み
+    .single-container__buy-item-content__payment-amount 
+      %h2支払い金額
+      .single-container__buy-item-content__payment-amount__box
+        ¥1000
+    .single-container__buy-item-content__payment-how
+      %h2支払い方法
+      .textbox-how
+    .single-container__buy-item-content__shipping-address
+      %h2送り先
+      .textbox-address
+    %a{class: "single-container__buy-item-content__purchase-btn"}
+      %h2{class: "purchase"}
+        購入する

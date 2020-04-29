@@ -1,103 +1,126 @@
-.single-header{
-  width: 100vw;
-  height: 128px;
-  padding-top: 40px;
-  img{
-    width: 185px;
-    height: 50px;
-    display: block;
-    margin: 0 auto;
-    &:hover{
-      opacity: 0.5;
+.single-container{
+  overflow: scroll;
+  background-color: #f5f5f5;
+  .single-header{
+    width: 100vw;
+    height: 128px;
+    padding-top: 40px;
+    img{
+      width: 185px;
+      height: 50px;
+      display: block;
+      margin: 0 auto;
+      &:hover{
+        opacity: 0.5;
+      }
     }
   }
-}
 
-.l-single-container_buy-item-container{
-  width: 700px;
-  height: 800px;
-  margin:0 auto;
-  .l-singlehead_buy-head{
-    width: 100%;
-    height: 100px;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 100px;
-  }
-  .buy-content_buy-item{
-    width: 100%;
-    height: 200px;
-    border-top: 1px solid;
-    border-color: #DDDDDD	;
-    .buy-content-inner{
-      .buy-item-box{
-        display: flex;
+  &__buy-item-content{
+    width: 700px;
+    height: 800px;
+    margin:0 auto;
+    background-color: white;
+    h2{
+      display: block;
+      font-weight: bold;
+    }
+    .buy-head{
+      width: 100%;
+      height: 100px;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 100px;
+    }
+    &__buy-item{
+      padding: 32px 180px 0px;
+      width: 100%;
+      height: 200px;
+      border-top: 1px solid;
+      border-color: #f5f5f5	;
+      display: flex;
         .buy-item-image{
-          width: 150px;
-          height: 150px;
-          margin-left: 50px;
-          margin-top: 25px;
-          margin-bottom: 25px;
-          background-color: blue;
+          width: 60px;
+          height: 80px;
+          background-color: skyblue;
         }
         .buy-item-detail{
           width: 300px;
           height: 150px;
           margin-left: 30px;
-          margin-top: 25px;
-          margin-bottom: 25px;
           .product-name{
             width: 100%;
-            height: 60px;
-            font-size: 20px;
+            height: 15px;
+            font-size: 14px;
           }
           .product-price{
             width: 100%;
             height: 60px;
-            margin-top: 10px;
-            font-size: 20px;
+            margin-top: 15px;
+            font-size: 14px;
           }
         }
+    }
+    &__payment-amount{
+      width: 100%;
+      height: 150px;
+      border-top: 1px solid;
+      border-color: #f5f5f5	;
+      display: flex;
+      padding: 32px 180px 0px;
+      h2{
+        width: 200px;
+        height: 30px;
+        font-size: 18px;
+      }
+      &__box{
+        width: 100px;
+        height: 30px;
+        font-size: 30px;
       }
     }
-  }
-  &__payment-amount{
-    width: 100%;
-    height: 100px;
-    border-top: 1px solid;
-    border-color: #DDDDDD	;
-    &__amount-box{
-      width: calc(100% - 100px);
-      height: 30px;
-      background-color: blue;
+    &__payment-how{
+      padding: 32px 180px 0px;
+      width: 100%;
+      height: 200px;
+      border-top: 1px solid;
+      border-color: #f5f5f5	;
     }
-  }
-  &__payment-how{
-    width: 100%;
-    height: 100px;
-    border-top: 1px solid;
-    border-color: #DDDDDD	;
-  }
-  &__shipping-address{
-    width: 100%;
-    height: 100px;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    border-color: #DDDDDD	;
-  }
-  &__purchase-btn{
-    text-align: center;
-    display:block;
-    margin-top: 110px;
-    color: white;
-    background-color: #3CCACE;
-    line-height: 40px;
-    height: 40px;
-    text-decoration: none;
-    border-radius: 18px;
-    &:hover{
-      opacity: 0.5;
+    .textbox-how{
+      width: 340px;
+      height: 60px;
+    }
+    &__shipping-address{
+      padding: 32px 180px 0px;
+      width: 100%;
+      height: 150px;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      border-color: #f5f5f5	;
+      .textbox-address{
+        width: 340px;
+        height: 60px;
+      }
+    }
+    &__purchase-btn{
+      display:block;
+      text-align: center;
+      color: white;
+      background-color: #3CCACE;
+      line-height: 50px;
+      height: 50px;
+      width: 340px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 70px auto;
+      .purchase{
+        font-weight: bold;
+        font-size: 14px;
+      }
+      &:hover{
+        opacity: 0.5;
+      }
     }
   }
 }
