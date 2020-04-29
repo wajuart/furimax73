@@ -30,13 +30,22 @@
             %li.list--right
               = link_to root_path do
                 ブランド
-          %ul.HeaderNav__lists--right
-            %li.list--left
-              = link_to root_path do
-                ログイン
-            %li.list--right
-              = link_to root_path do
-                新規会員登録
+          - if user_signed_in?
+            %ul.HeaderNav__lists--right
+              %li.list--left
+                = link_to root_path do
+                  マイページ
+              %li.list--right
+                = link_to destroy_user_session_path, method: :delete do
+                  ログアウト
+          - else
+            %ul.HeaderNav__lists--right
+              %li.list--left
+                = link_to new_user_session_path do
+                  ログイン
+              %li.list--right
+                = link_to new_user_registration_path do
+                  新規会員登録
 
     = yield
 
