@@ -1,6 +1,6 @@
 .single-container{
   width: 100vw;
-  height: 1500px;
+  height: 100vh;
   background-color: #f5f5f5;
   .single-header{
     width: 100vw;
@@ -52,7 +52,7 @@
       text-align: center;
       line-height: 100px;
     }
-    
+
     &__buy-item{
       padding: 32px 180px 0px;
       width: 100%;
