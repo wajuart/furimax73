@@ -1,43 +1,64 @@
-.confirmation{
-  width: 600px;
+.single-header{
+  width: 100vw;
+  height: 128px;
+  padding-top: 40px;
+  img{
+    width: 185px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+}
+
+.l-single-container_buy-item-container{
+  width: 700px;
   height: 800px;
   margin:0 auto;
-  &__title{
+  .l-singlehead_buy-head{
     width: 100%;
     height: 100px;
-    font-size: 50px;
+    font-size: 22px;
+    font-weight: bold;
     text-align: center;
     line-height: 100px;
-    margin-top: 60px;
   }
-  &__product{
+  .buy-content_buy-item{
     width: 100%;
     height: 200px;
-    display: flex;
     border-top: 1px solid;
     border-color: #DDDDDD	;
-    &__image{
-      width: 150px;
-      height: 150px;
-      margin-left: 50px;
-      margin-top: 25px;
-      margin-bottom: 25px;
-      background-color: blue;
-    }
-    &__textbox{
-      width: 300px;
-      height: 150px;
-      margin-left: 30px;
-      margin-top: 25px;
-      margin-bottom: 25px;
-      .product-name{
-        width: 100%;
-        height: 60px;
-      }
-      .product-price{
-        width: 100%;
-        height: 60px;
-        margin-top: 10px;
+    .buy-content-inner{
+      .buy-item-box{
+        display: flex;
+        .buy-item-image{
+          width: 150px;
+          height: 150px;
+          margin-left: 50px;
+          margin-top: 25px;
+          margin-bottom: 25px;
+          background-color: blue;
+        }
+        .buy-item-detail{
+          width: 300px;
+          height: 150px;
+          margin-left: 30px;
+          margin-top: 25px;
+          margin-bottom: 25px;
+          .product-name{
+            width: 100%;
+            height: 60px;
+            font-size: 20px;
+          }
+          .product-price{
+            width: 100%;
+            height: 60px;
+            margin-top: 10px;
+            font-size: 20px;
+          }
+        }
       }
     }
   }
@@ -46,6 +67,11 @@
     height: 100px;
     border-top: 1px solid;
     border-color: #DDDDDD	;
+    &__amount-box{
+      width: calc(100% - 100px);
+      height: 30px;
+      background-color: blue;
+    }
   }
   &__payment-how{
     width: 100%;

@@ -1,11 +1,25 @@
-.confirmation
-  .confirmation__title 購入内容の確認
-  .confirmation__product
-    .confirmation__product__image image
-    .confirmation__product__textbox
-      .product-name product1
-      .product-price 1000¥
-  .confirmation__payment-amount 支払い金額
-  .confirmation__payment-how 支払い方法
-  .confirmation__shipping-address 送り先
-  %a{class: "confirmation__purchase-btn"} 購入する
+.single-header
+  = image_tag asset_path ("logo/logo.png")
+
+.l-single-container_buy-item-container
+  %h2{class: "l-singlehead_buy-head"}
+    購入内容の確認
+  .buy-content_buy-item
+    .buy-content-inner
+      .buy-item-box
+        .buy-item-image
+          image
+        .buy-item-detail
+          .product-name
+            product1
+          .product-price
+            1000¥
+  .confirmation__payment-amount 
+    %h2支払い金額
+    .confirmation__payment-amount__box
+  .confirmation__payment-how
+    支払い方法
+  .confirmation__shipping-address
+    送り先
+  %a{class: "confirmation__purchase-btn"}
+    購入する
