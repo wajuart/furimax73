@@ -74,16 +74,16 @@
       .user-icon-box
         .user-icon
         .trade-info
-          .user-name
+          .trade-info__user-name
             空条 承太郎
-          .trade-count  
-            .sell-title
+          .trade-info__count  
+            .trade-info__count__sell-title
               出品数
-            .sell-count
+            .trade-info__count__sell-count
               25      
-            .buy-title
+            .trade-info__count__buy-title
               購入数
-            .buy-count
+            .trade-info__count__buy-count
               15
 
       %ul.trade__tabs
@@ -93,26 +93,36 @@
           購入リスト
       .tab-content
         %ul.tab-content__list
-          %li.tab-content__list__item
-            全身タイツ 
-          %li.tab-content__list__item 
-            全身タイツ 
-          %li.tab-content__list__item 
-            全身タイツ    
-          %li.tab-content__list__item    
-            全身タイツ 
-          %li.tab-content__list__item 
-            スタープラチナ
-          %li.tab-content__list__item 
-            全身タイツ 
-          %li.tab-content__list__item 
-            全身タイツ 
-          %li.tab-content__list__item
-            全身タイツ
-          %li.tab-content__list__item
-            全身タイツ
-          %li.tab-content__list__item
-            全身タイツ            
+          = link_to root_path do
+            %li.tab-content__list__item
+              全身タイツ 
+          = link_to root_path do    
+            %li.tab-content__list__item 
+              全身タイツ
+          = link_to root_path do     
+            %li.tab-content__list__item 
+              全身タイツ 
+          = link_to root_path do       
+            %li.tab-content__list__item    
+              全身タイツ 
+          = link_to root_path do    
+            %li.tab-content__list__item 
+              全身タイツ
+          = link_to root_path do    
+            %li.tab-content__list__item 
+              全身タイツ
+          = link_to root_path do     
+            %li.tab-content__list__item 
+              全身タイツ
+          = link_to root_path do     
+            %li.tab-content__list__item
+              スタープラチナ
+          = link_to root_path do    
+            %li.tab-content__list__item
+              全身タイツ
+          = link_to root_path do    
+            %li.tab-content__list__item
+              全身タイツ            
              
 
 
