@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
   resources :products, only: [:index, :show]
-  root 'destinations#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'products#index'
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
+
+  devise_scope :user do
+    get 'destinations', to: 'users/registrations#new_destination'
+    post 'destinations', to: 'users/registrations#create_destination'
+  end
+
+
 end
