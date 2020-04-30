@@ -1,19 +1,19 @@
-.single-container
+.single-containers
   %header.single-header
     %h1.single-header__logo
       = link_to "#" do
-        =image_tag(asset_path("icon/icon_brand.png"))
+        =image_tag(asset_path("logo/logo.png"))
     %nav.single-header__progress
       %ol
         %li.text-active{ id: "first" }
           会員情報
-          .round-red
+          .round-blue
         %li.text
           お届け先住所入力
-          .round-red
+          .round-gray
         %li.text{ id: "end" }
           完了
-          .progress-round
+          .round-gray
   %main.single-main
     %section.single-main__container
       %h2.single-main__container__title
@@ -22,9 +22,9 @@
         = form_for(@user, url: user_registration_path) do |f|
           = render "devise/shared/error_messages", resource: @user
 
-          .form-group
+          .form-group-top
             = f.label :ニックネーム
-            %span.form-group__require 必須
+            %span.form-group-top__require 必須
             %br
             = f.text_field :nickname, {placeholder: "例) メルカリ太郎",class:'form-group__input'}
 
@@ -42,7 +42,7 @@
 
           .form-group
             = f.label :パスワード
-            %span.form-group__require (確認用)
+            %span.form-group__optional 確認
             %br
             = f.password_field :password_confirmation,{autocomplete: "off",placeholder: "7文字以上の半角英数字",class:'form-group__input',id:"password_confirmation"}
             %p.form-group__info ※ 英字と数字の両方を含めて設定してください
@@ -50,13 +50,13 @@
           .form-group
             = f.label :"お名前(全角)"
             %span.form-group__require 必須
-          = f.text_field :family_name, {placeholder:"例) 山田",class:'form-group__input--half'}
+          = f.text_field :family_name, {placeholder:"例) 山田",class:'form-group__input--half-first'}
           = f.text_field :first_name, {placeholder:"例) 彩",class:'form-group__input--half'}
 
           .form-group
             = f.label :"お名前カナ(全角)"
             %span.form-group__require 必須
-          = f.text_field :family_name_kana, {placeholder:"例) ヤマダ",class:'form-group__input--half'}
+          = f.text_field :family_name_kana, {placeholder:"例) ヤマダ",class:'form-group__input--half-first'}
           = f.text_field :first_name_kana, {placeholder:"例) アヤ",class:'form-group__input--half'}
 
           .form-group
@@ -66,5 +66,23 @@
             .birthday-select-wrap
               != sprintf(f.date_select(:birth_day, start_year: 1980, end_year: Date.today.year, use_month_numbers: true, date_separator:'%s'),'年','月')+'日'
 
-          .form-group
-            = f.submit '次へ', class: "btn-default btn-red", url: "destination_path"
+          .form-group-submit
+            = f.submit '次へ進む', class: "btn-default-blue", url: "destination_path"
+  
+  -# 浅井さんのフッター引用
+  -# レンダーなりで変えるまで固定
+  .footer-sale
+    .contents
+      %ul.contents-list
+        %li.content
+          = link_to "#", class: "private-policy" do
+            プライバシーポリシー
+        %li.content
+          = link_to "#", class: "user-policy" do
+            フリマ利用規約
+        %li.content
+          = link_to "#", class: "point-policy" do
+            ポイントに関する特約
+    = link_to "#", class: "logo" do
+      = image_tag(asset_path("logo/logo.png"), class:"logo-image")
+    .company-name ©︎ FURIMA
