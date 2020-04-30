@@ -88,26 +88,26 @@
         }
         .trade-info {
           width: 300px;
-          .user-name {
-            font-size: 20px;
+          &__user-name {
+            font-size: 24px;
             margin: 24px 0 30px 0;
             text-align: center;
           }
-          .trade-count {
+          &__count {
             padding: 10px;
             display: flex;
             justify-content: space-between;
-            .sell-title {
+            &__sell-title {
               font-size: 18px;
             }  
-            .sell-count {
+            &__sell-count {
               font-size: 20px;
               margin-right: 30px;
             }
-            .buy-title {
+            &__buy-title {
               font-size: 18px;
             }  
-            .buy-count {
+            &__buy-count {
               font-size: 20px;
                 
             }
@@ -180,4 +180,10 @@
 .mypage-nav a {
   color: #222222;
   text-decoration: none;
+}
+
+.tab-content__list a {
+  color: #222222;
+  text-decoration: none;
+  line-height: 45px;
 }  
