@@ -379,3 +379,519 @@ body{
     }
   }
 }
+
+
+// ユーザー登録画面
+
+.single-containers{
+  background-color: #f8f8f8;
+  .single-header{
+    height: 128px;
+    text-align: center;
+    &__logo{
+      display: inline-block;
+      margin-top: 40px;
+      a{
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+        display: inline-block;
+        margin: 0 8px 0 0;
+        img{
+          width: 185px;
+          height: 49px;
+        }
+      }
+    }
+    &__progress{
+      margin-top: 40px;
+      padding: 0 0 0 44px;
+      border: 0;
+      display: inline-block;
+      vertical-align: top;
+      ol{
+        margin: 0;
+        list-style: none;
+        display: flex;
+        .text-active{
+          font-weight: 600;
+          color: #3CCACE;
+          margin: 0 40px 0 0;
+          z-index: 100;
+          min-width: 60px;
+          font-size: 12px;
+          .round-blue{
+            background: #3CCACE;
+            width: 12px;
+            height: 12px;
+            margin: 8px auto 0;
+            border-radius: 50%;
+          }
+        }
+        .text{
+          font-weight: 600;
+          margin: 0 40px 0 0;
+          min-width: 60px;
+          position: relative;
+          display: inline-block;
+          color: #888;
+          font-size: 12px;
+          .round-gray{
+            width: 12px;
+            height: 12px;
+            margin: 8px auto 0;
+            background: #ccc;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+  .single-main{
+    display: block;
+    &__container{
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      h2.single-main__container__title{
+        font-size: 22px;
+        padding: 32px;
+        text-align: center;
+        font-weight: bold;
+      }
+      // 登録完了しましたのところ
+      &__done{
+        padding: 40px 40px 64px;
+        border-top: 1px solid #f5f5f5;
+        text-align: center;
+        h3.thanx{
+          font-size: 20px;
+        } 
+        p.subtitle{
+          font-size: 15px;
+        }
+
+      }
+
+      &__back{
+        padding: 20px 0;
+        text-align: center;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+      }
+
+      .form__frame{
+        padding: 40px 40px 64px;
+        border-top: 1px solid #f5f5f5;
+        .new_user{
+          max-width: 343px;
+          margin: 0 auto;
+          .form-group-top{
+            font-size: 14px;
+            label{
+              font-weight: bold;
+            }
+            &__require{
+              background: #3CCACE;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            .form-group__input{
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              padding: 10px 16px 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              outline: none;
+            }
+          }
+          .form-group{
+            font-size: 14px;
+            margin-top: 32px;
+            label{
+              font-weight: bold;
+            }
+            &__require{
+              background: #3CCACE;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            &__input{
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              padding: 10px 16px 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              outline: none;
+            }
+
+            .birthday-select-wrap{
+              margin-top: 8px;
+              select{
+                width: 76px;
+                height: 50px;
+                background: #fff;
+                border: 1px solid #ccc;
+                margin-left: 4px;
+              }
+            }
+          }
+          .form-group__input--half-first{
+            margin-right: 7px;
+            margin-top:8px;
+            width: calc(50% - 6px);
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            outline: none;
+          }
+          
+          .form-group__input--half{
+            margin-top:8px;
+            width: calc(50% - 6px);
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            outline: none;
+          }
+
+          .form-group-submit{
+            text-align: center;
+            margin-top: 50px;
+            .btn-default-blue{
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              cursor: pointer;
+              background: #3CCACE;
+              border: 1px solid #3CCACE;
+              color: #fff;
+            }
+          }
+        }
+
+      }
+    }
+  }
+  .single-main{
+    display: block;
+    &__container{
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      h2{
+        font-size: 22px;
+        padding: 32px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .form__frame{
+        padding: 40px 40px 64px;
+        border-top: 1px solid #f5f5f5;
+        .new_user{
+          max-width: 343px;
+          margin: 0 auto;
+          .form-group-top{
+            font-size: 14px;
+            label{
+              font-weight: bold;
+            }
+            &__require{
+              background: #3CCACE;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            .form-group__input{
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              padding: 10px 16px 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              outline: none;
+            }
+          }
+          .form-group{
+            font-size: 14px;
+            margin-top: 32px;
+            label{
+              font-weight: bold;
+            }
+            &__require{
+              background: #3CCACE;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            &__optional{
+              background: #ccc;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            &__input{
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              padding: 10px 16px 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              outline: none;
+            }
+
+            .birthday-select-wrap{
+              margin-top: 8px;
+              select{
+                width: 76px;
+                height: 50px;
+                background: #fff;
+                border: 1px solid #ccc;
+                margin-left: 4px;
+              }
+            }
+          }
+          .form-group__input--half-first{
+            margin-right: 7px;
+            margin-top:8px;
+            width: calc(50% - 6px);
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            outline: none;
+          }
+          
+          .form-group__input--half{
+            margin-top:8px;
+            width: calc(50% - 6px);
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            outline: none;
+          }
+
+          .form-group-submit{
+            text-align: center;
+            margin-top: 50px;
+            .btn-default-blue{
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              cursor: pointer;
+              background: #3CCACE;
+              border: 1px solid #3CCACE;
+              color: #fff;
+            }
+          }
+          // ログイン画面のパスワードお忘れですか？
+          // サインアップに効かせてます
+          .form-group-forget{
+            text-align: center;
+            width: 100%;
+            background: #ccc;
+            margin-top: 20px;
+            a.forgot-password{
+              text-decoration: none;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              cursor: pointer;
+              background: #ccc;
+              border: 1px solid #ccc;
+              color: #fff;
+            }
+          }
+        }
+        .new_destination{
+          max-width: 343px;
+          margin: 0 auto;
+          .form-group-top{
+            font-size: 14px;
+            label{
+              font-weight: bold;
+            }
+            .form-group__input{
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              padding: 10px 16px 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              outline: none;
+            }
+          }
+          .form-group{
+            font-size: 14px;
+            margin-top: 32px;
+            label{
+              font-weight: bold;
+            }
+            &__require{
+              background: #3CCACE;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            &__optional{
+              background: #ccc;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            &__input{
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              padding: 10px 16px 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              outline: none;
+            }
+
+            .birthday-select-wrap{
+              margin-top: 8px;
+              select{
+                width: 76px;
+                height: 50px;
+                background: #fff;
+                border: 1px solid #ccc;
+                margin-left: 4px;
+              }
+            }
+          }
+          .form-group__input--half-first{
+            margin-right: 7px;
+            margin-top:8px;
+            width: calc(50% - 6px);
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            outline: none;
+          }
+          
+          .form-group__input--half{
+            margin-top:8px;
+            width: calc(50% - 6px);
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            outline: none;
+          }
+
+          .form-group-submit{
+            text-align: center;
+            margin-top: 50px;
+            .btn-default-blue{
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              cursor: pointer;
+              background: #3CCACE;
+              border: 1px solid #3CCACE;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 浅井さんのフッター引用
+  // レンダーなりで変えるまで固定
+  .footer-sale {
+    padding: 40px 0px 41px;
+    text-align: center;
+    .contents {
+      .contents-list {
+        display: inline-block;
+        margin: -16px 0px 40px -16px;
+        .content {
+          display: inline-block;
+          font-size: 12px;
+          margin: 16px 0px 0px 16px;
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .logo {
+      .logo-image {
+        height: 49px;
+        width: 185px;
+      }
+    }
+    .company-name {
+      font-size: 12px;
+    }
+  }
+}
