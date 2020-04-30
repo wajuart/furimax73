@@ -1,17 +1,17 @@
 .single-containers
   %header.single-header
     %h1.single-header__logo
-      = link_to "#" do
+      = link_to root_path do
         =image_tag(asset_path("logo/logo.png"))
     %nav.single-header__progress
       %ol
-        %li.text{ id: "first" }
+        %li.text#first
           会員情報
           .round-gray
         %li.text-active
           お届け先住所入力
           .round-blue
-        %li.text{ id: "end" }
+        %li.text#end
           完了
           .round-gray
   %main.single-main
