@@ -3,7 +3,7 @@
 }
 
 
-.profile-edit {
+.form {
   background-color: #f1f1f1;
   height: 100%;
   padding: 40px;
@@ -14,94 +14,71 @@
     font-size: 24px;
     font-weight: bold;
     margin: 0 auto;
-    &__head {
+    .profile-head {
       height: 50px;
       text-align: center;
       padding: 8px 24px;
     }
-    &__icon {
-      background-color: #ffe7e7;
+    .profile-icon {
+      background-color: rgb(232, 254, 255);
       height: 156px;
-    }
-    &__setting {
+      padding: 20px 16px ;
+      display: flex;
+      justify-content: center;
+      .photo-box {
+        .photo-label{
+          display: none;
+        }
+        .user_image { 
+          background-color: rgb(255, 247, 240);
+          background-image: url(https://pics.prcm.jp/dona1118/82181124/png/82181124.png);
+          background-size: 100%;
+          height: 100px;
+          width: 100px;
+          border: solid thin;
+          border-radius: 50%;
+          margin: 10px 20px 0 0; 
+          }
+        }
+      }  
+      .nickname-box {
+        .nickname {
+          background-color: #ffffff;
+          height: 48px;
+          width: 220px;
+          font-size: 13px;
+          font-weight: lighter;
+          border: solid thin;
+          border-radius: 5px;
+          margin: 35px 20px 20px;
+          padding: 10px 16px 8px;
+        }
+      }
+    .profile-setting {
       height: 362px;
-      &__text {
-
+      padding: 40px 16px;
+      &__text-box {
+        .introduction {
+          height: 216px;
+          width: 668px;
+          font-size: 16px;
+          font-weight: normal;
+          border: solid thin #dddddd;
+          padding: 15px;
+        }
       }
-      &__edit-btn {
-        
+      &__btn-box {
+        .edit-btn { 
+          background-color: #3CCACE;
+          height: 50px;
+          width: 668px;
+          font-size: 14px;
+          color: #ffffff;
+          line-height: 50px;
+          text-align: center;
+          margin: 16px auto 0;
+          }
       }
     }
-
-
-
-//     &__profile {
-//       background-color: #e6e6e6;
-//       height: 320px;
-//       padding: 30px;
-//       &__user-photo {
-//         background-color: rgb(255, 247, 240);
-//         background-image: url(https://pics.prcm.jp/dona1118/82181124/png/82181124.png);
-//         background-size: 100%;
-//         height: 160px;
-//         width: 160px;
-//         margin-right: 40px;
-//         border: solid thin;
-//         border-radius: 50%;
-//         margin: 0 auto;
-//       }
-//       &__user-name {
-//         text-align: center;
-//         margin: 20px auto;
-//       }
-//       &__trade-score {
-//         text-align: center;
-//         display: flex;
-//         justify-content: center;
-//         .sell-title {
-//           font-size: 16px;
-//         }  
-//         .sell-count {
-//           font-size: 18px;
-//           margin-left: 15px;
-//           margin-right: 40px;
-//         }
-//         .buy-title {
-//           font-size: 16px;
-//           margin-right: 15px;
-//         }  
-//         .buy-count {
-//           font-size: 18px;
-            
-//         }
-//       }
-//     }
-//     &__introduction {
-//       background-color: #ffffff;
-//       height: 620px;
-//       padding: 30px 50px 60px 50px;
-//     }
-    
-//   }
-// }
-// .social-media-box {
-//   background-color: #ffe7e7;
-//   width: 700px;
-//   margin: 0 auto;
-//   .social-media-items {
-//     padding: 40px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     .face.book {
-//       margin: 0 20px;
-//     }
-//     .teitter {
-//       // margin: 0 20px;
-//     }
-//     .LINE {
-//       margin: 0 20px;
-//     }
-//   }  
   }
 }
