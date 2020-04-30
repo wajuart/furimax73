@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :products, only: [:index, :show]
+  resources :products do
+    resources :images, only: [:create, :show, :update, :destroy]
+    resources :categorys, only: [:create, :show, :update, :destroy]
+    resources :brands, only: [:create, :show, :update, :destroy]
+  end
+  resources :destinations, only: [:index, :edit, :update]
   root 'products#index'
 
   devise_for :users, controllers: {
