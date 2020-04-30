@@ -1,10 +1,35 @@
-%h2 Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+.single-containers
+  %header.single-header
+    %h1.single-header__logo
+      = link_to root_path do
+        =image_tag(asset_path("logo/logo.png"))
+
+  %main.single-main
+    %section.single-main__container
+      %h2.single-main__container__title
+        パスワードをお忘れの方
+      .form__frame
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          .form-group-top
+            = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email",class:'form-group__input'
+          .form-group-submit
+            = f.submit "送信する", class:"btn-default-blue"
+
+  .footer-sale
+    .contents
+      %ul.contents-list
+        %li.content
+          = link_to "#", class: "private-policy" do
+            プライバシーポリシー
+        %li.content
+          = link_to "#", class: "user-policy" do
+            フリマ利用規約
+        %li.content
+          = link_to "#", class: "point-policy" do
+            ポイントに関する特約
+    = link_to "#", class: "logo" do
+      = image_tag(asset_path("logo/logo.png"), class:"logo-image")
+    .company-name ©︎ FURIMA

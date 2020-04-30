@@ -1,19 +1,19 @@
-.single-container
+.single-containers
   %header.single-header
     %h1.single-header__logo
-      = link_to "#" do
-        =image_tag(asset_path("icon/icon_brand.png"))
+      = link_to root_path do
+        =image_tag(asset_path("logo/logo.png"))
     %nav.single-header__progress
       %ol
-        %li.text-active{ id: "first" }
+        %li.text#first
           会員情報
-          .round-red
-        %li.text
+          .round-gray
+        %li.text-active
           お届け先住所入力
-          .round-red
-        %li.text{ id: "end" }
+          .round-blue
+        %li.text#end
           完了
-          .progress-round
+          .round-gray
   %main.single-main
     %section.single-main__container
       %h2.single-main__container__title
@@ -25,43 +25,49 @@
           .form-group
             = f.label :郵便番号
             %span.form-group__require 必須
+            %br
             = f.text_field :post_code,{autofocus: true, placeholder: "例）123-4567", class: 'form-group__input'}
 
           .form-group
             = f.label :都道府県
             %span.form-group__require 必須
+            %br
             = f.select :prefecture, Destination.prefectures.keys, {}, {class: 'form-group__input'}
 
           .form-group
             = f.label :市町村
             %span.form-group__require 必須
+            %br
             = f.text_field :city, autofocus: true, placeholder: "例）札幌市", class: 'form-group__input'
 
           .form-group
             = f.label :番地
             %span.form-group__require 必須
+            %br
             = f.text_field :address, autofocus: true, placeholder: "例）青葉1-1-1", class: 'form-group__input'
 
           .form-group
             = f.label :建物名
             %span.form-group__optional 任意
+            %br
             = f.text_field :building_name, autofocus: true, placeholder: "例）柳ビル103", class: 'form-group__input'
 
           .form-group
             = f.label :"お届け先氏名(全角)"
             %span.form-group__require 必須
-          = f.text_field :family_name, {placeholder:"例) 山田",class:'form-group__input--half'}
+          = f.text_field :family_name, {placeholder:"例) 山田",class:'form-group__input--half-first'}
           = f.text_field :first_name, {placeholder:"例) 彩",class:'form-group__input--half'}
+
           .form-group
             = f.label :"お届け先カナ(全角)"
             %span.form-group__require 必須
-          = f.text_field :family_name_kana, {placeholder:"例) ヤマダ",class:'form-group__input--half'}
+          = f.text_field :family_name_kana, {placeholder:"例) ヤマダ",class:'form-group__input--half-first'}
           = f.text_field :first_name_kana, {placeholder:"例) アヤ",class:'form-group__input--half'}
 
           .form-group
             = f.label :電話番号
-            %span.form-group__require 任意
+            %span.form-group__optional 任意
             = f.text_field :phone_number, autofocus: true, placeholder: "例）090-0000-0000", class: 'form-group__input'
 
-          .form-group
-            = f.submit "登録する", class: "btn-default btn-red", url: "destinations_path", method: :post
+          .form-group-submit
+            = f.submit "登録する", class: "btn-default-blue", url: "destinations_path", method: :post

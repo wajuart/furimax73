@@ -1,3 +1,45 @@
-%h2
-  登録が完了しました
-= link_to "トップへ戻る", root_path
+.single-containers
+  %header.single-header
+    %h1.single-header__logo
+      = link_to "#" do
+        =image_tag(asset_path("logo/logo.png"))
+    %nav.single-header__progress
+      %ol
+        %li.text#first
+          会員情報
+          .round-gray
+        %li.text
+          お届け先住所入力
+          .round-gray
+        %li.text-active#end
+          完了
+          .round-blue
+  %main.single-main
+    %section.single-main__container
+      %h2.single-main__container__title
+        会員登録完了
+      .single-main__container__done
+        %h3.thanx
+          ありがとうございます。
+        %p.subtitle
+          会員登録が完了いたしました。
+      .single-main__container__back
+        = link_to "トップへ戻る", root_path
+
+        -# 浅井さんのフッター引用
+        -# レンダーなりで変えるまで固定
+  .footer-sale
+    .contents
+      %ul.contents-list
+        %li.content
+          = link_to "#", class: "private-policy" do
+            プライバシーポリシー
+        %li.content
+          = link_to "#", class: "user-policy" do
+            フリマ利用規約
+        %li.content
+          = link_to "#", class: "point-policy" do
+            ポイントに関する特約
+    = link_to "#", class: "logo" do
+      = image_tag(asset_path("logo/logo.png"), class:"logo-image")
+    .company-name ©︎ FURIMA
