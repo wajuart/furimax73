@@ -114,49 +114,33 @@
           }  
         }
       }
-      .trade__tabs { 
+      .trade-tab { 
         display: flex;
-        &__sell {
-          background: rgb(166, 203, 252);
-          height: 70px;
-          width: 350px;
-          color: #ffffff;
-          font-size: 16px;
-          font-weight: bold;
-          line-height: 70px;
-          text-align: center;
-          &:hover {
-            background: rgba(166, 203, 252, 0.521);
-            color: #000000;
-            font-weight: bold;
-          }  
-          &:active {
-            background-color: #ffffff;
-          }
-        }
-        &__buy {
-          background: rgb(255, 197, 170);
-          height: 70px;
-          width: 350px;
-          color: #ffffff;
-          font-size: 16px;
-          font-weight: bold;
-          line-height: 70px;
-          text-align: center;
-          &:hover {
-            background-color: rgba(255, 197, 170, 0.5);
-            color: #000000;
-            font-weight: bold;
-          }  
-          &:active {
-            background-color: #ffffff;
-          }
+      }  
+      .trade-tab li {
+        background-color: #3CCACE;
+        height: 70px;
+        width: 350px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 70px;
+        text-align: center;
+        cursor: pointer;
+        transition: .3s;
+        &:hover {
+          opacity: 0.7;
         }
       }
-      .tab-content {
+      .trade-tab li.active {
         background-color: #ffffff;
-        &__list {
-          &__item {
+        color: #3CCACE;
+        cursor: auto;
+      }
+      .tab-area {
+        background-color: #ffffff;
+        .list-show {
+          .item {
             height: 80px;
             padding: 16px;
             border-bottom: solid thin #ebebeb;
@@ -166,23 +150,24 @@
               font-weight: bold;
             }
           }
-          &__item-last {
-            height: 80px;
-            padding: 16px;
-          }
         }
       }      
-    }
+      }
+      .tab-area ul {
+        display: none;
+      }
+      .tab-area ul.list-show {
+        display: block;
+      }
   }
 }
-
 
 .mypage-nav a {
   color: #222222;
   text-decoration: none;
 }
 
-.tab-content__list a {
+.list-show a {
   color: #222222;
   text-decoration: none;
   line-height: 45px;
