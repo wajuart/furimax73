@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     resources :images, only: [:create, :show, :update, :destroy]
     resources :categorys, only: [:create, :show, :update, :destroy]
     resources :brands, only: [:create, :show, :update, :destroy]
+    collection do
+      get 'search'
+    end
   end
   resources :destinations, only: [:index, :edit, :update]
   root 'products#index'
