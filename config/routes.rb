@@ -11,11 +11,13 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
   }
 
-  resources :card, only: [:new, :show] do
+  resources :users, only: [:show, :edit]
+
+  resources :cards, only: [:new, :show] do
     collection do
-      post 'show', to: 'card#show'
-      post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
     end
   end
 

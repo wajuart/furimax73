@@ -81,3 +81,5 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'payjp'
+gem 'ancestry'
+gem "omniauth-rails_csrf_protection"
