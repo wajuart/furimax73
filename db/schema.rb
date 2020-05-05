@@ -85,12 +85,11 @@ ActiveRecord::Schema.define(version: 2020_05_05_004407) do
     t.datetime "updated_at", null: false
     t.string "user_image"
     t.text "introduction"
-    t.string "family_name"
-    t.string "first_name"
-    t.string "family_name_kana"
-    t.string "first_name_kana"
+    t.string "family_name", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "first_name_kana", default: "", null: false
     t.string "nickname", default: "", null: false
-    t.date "birth_day"
+    t.date "birth_day", null: false
     t.string "provider"
     t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
