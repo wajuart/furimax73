@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2020_05_05_004407) do
     t.text "introduction"
     t.string "family_name", default: "", null: false
     t.string "first_name", default: "", null: false
+    t.string "family_name_kana", default: "", null: false
     t.string "first_name_kana", default: "", null: false
     t.string "nickname", default: "", null: false
     t.date "birth_day", null: false
