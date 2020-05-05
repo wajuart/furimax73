@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :destinations, only: [:index, :edit, :update]
+  resources :destinations, only: [
+    :index, :edit, :update,
+    omniauth_callbacks: 'users/omniauth_callbacks']
   root 'products#index'
 
   devise_for :users, controllers: {
