@@ -16,13 +16,12 @@
             = link_to root_path do
               = image_tag asset_path("logo/logo.png")
               
-          .HeaderMain__search-box
-            .HeaderMain__search-box__input
-              キーワードから探す
-            = link_to root_path do           
-              .HeaderMain__search-box__decision
-                .search-icon
-                  = image_tag asset_path("icon/icon-search 1.png")
+          .HeaderMain__search-box          
+            = form_tag(search_products_path, method: 'get') do      
+              = text_field_tag :search , '', placeholder: "キーワードから探す", class: "search-input" 
+              = submit_tag '検索', class: "search-btn" , name: nil           
+              .search-icon
+                = image_tag asset_path("icon/icon-search 1.png")
         .HeaderNav
           %ul.HeaderNav__lists--left
             %li.list--left
