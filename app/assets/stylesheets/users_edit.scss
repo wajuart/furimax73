@@ -1,0 +1,84 @@
+*{
+  box-sizing: border-box;
+}
+
+
+.form {
+  background-color: #f1f1f1;
+  height: 100%;
+  padding: 40px;
+  .profile-container {
+    background-color: #ffffff;
+    height: 100%;
+    width: 700px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto;
+    .profile-head {
+      height: 50px;
+      text-align: center;
+      padding: 8px 24px;
+    }
+    .profile-icon {
+      background-color: rgb(232, 254, 255);
+      height: 156px;
+      padding: 20px 16px ;
+      display: flex;
+      justify-content: center;
+      .photo-box {
+        .photo-label{
+          display: none;
+        }
+        .user_image { 
+          background-color: rgb(255, 247, 240);
+          background-image: url(https://pics.prcm.jp/dona1118/82181124/png/82181124.png);
+          background-size: 100%;
+          height: 100px;
+          width: 100px;
+          border: solid thin;
+          border-radius: 50%;
+          margin: 10px 20px 0 0; 
+          }
+        }
+      }  
+      .nickname-box {
+        .nickname {
+          background-color: #ffffff;
+          height: 48px;
+          width: 220px;
+          font-size: 13px;
+          font-weight: lighter;
+          border: solid thin;
+          border-radius: 5px;
+          margin: 35px 20px 20px;
+          padding: 10px 16px 8px;
+        }
+      }
+    .profile-setting {
+      height: 362px;
+      padding: 40px 16px;
+      &__text-box {
+        .introduction {
+          height: 216px;
+          width: 668px;
+          font-size: 16px;
+          font-weight: normal;
+          border: solid thin #dddddd;
+          padding: 15px;
+        }
+      }
+      &__btn-box {
+        .edit-btn { 
+          background-color: #3CCACE;
+          height: 50px;
+          width: 668px;
+          font-size: 14px;
+          color: #ffffff;
+          line-height: 50px;
+          text-align: center;
+          margin: 16px auto 0;
+          }
+      }
+    }
+  }
+}

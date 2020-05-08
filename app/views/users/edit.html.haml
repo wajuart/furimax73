@@ -1,0 +1,24 @@
+.form
+  .profile-container
+    .profile-head
+      プロフィール
+    .profile-icon
+      %label{class: "photo-label"}
+        .photo-box
+          
+          %input.user_image{type: "file", accept: "photo/*"}
+      .nickname-box
+        %input.nickname{placeholder: "ニックネーム", type: "text"}
+    .profile-setting
+      .profile-setting__text-box
+        %textarea.introduction{placeholder: "自己紹介文を入力してください"} 
+      = link_to root_path do
+        .profile-setting__btn-box
+          %button.edit-btn{type: "submit"} 変更する
+
+
+
+
+
+
+

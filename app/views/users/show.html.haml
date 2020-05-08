@@ -1,1 +1,129 @@
-hello
+.MypageDisplay  
+  .MypageContainer
+    .side-var
+      .mypage-nav
+        %ul.mypage-nav__list
+          %li.mypage-nav__list__item-top
+            マイページ
+          = link_to root_path do   
+            %li.mypage-nav__list__item
+              出品する
+          = link_to root_path do     
+            %li.mypage-nav__list__item
+              出品した商品-出品中
+          = link_to root_path do   
+            %li.mypage-nav__list__item
+              出品した商品-取引中
+          = link_to root_path do   
+            %li.mypage-nav__list__item
+              出品した商品-売却済み
+          = link_to root_path do   
+            %li.mypage-nav__list__item
+              購入した商品-取引中
+          = link_to root_path do   
+            %li.mypage-nav__list__item
+              購入した商品-過去の取引
+          = link_to root_path do    
+            %li.mypage-nav__list__item
+              購入した商品-売却済み
+          = link_to root_path do   
+            %li.mypage-nav__list__item
+              評価一覧
+          = link_to root_path do   
+            %li.mypage-nav__list__item-last
+              お問い合わせ                  
+
+        %h3.mypage-nav__head
+          ジョジョの奇妙な冒険3部
+        %ul.mypage-nave__list
+          = link_to root_path do
+            %li.mypage-nav__list__item
+              花京院典明
+          = link_to root_path do    
+            %li.mypage-nav__list__item
+              ジョナサン・ジョースター 
+          = link_to root_path do
+            %li.mypage-nav__list__item-last
+              ジャン・ピエール・ポルナレフ
+        %h3.mypage-nav__head
+          設定
+        %ul.mypage-nave__list
+          = link_to root_path do
+            %li.mypage-nav__list__item
+              プロフィール
+          = link_to root_path do
+            %li.mypage-nav__list__item
+              発送元・お届け先住所変更
+          = link_to root_path do
+            %li.mypage-nav__list__item
+              支払い方法
+          = link_to root_path do
+            %li.mypage-nav__list__item
+              メール/パスワード
+          = link_to root_path do  
+            %li.mypage-nav__list__item
+              本人情報      
+          = link_to root_path do  
+            %li.mypage-nav__list__item
+              電話番号の確認
+          = link_to root_path do  
+            %li.mypage-nav__list__item-last
+              ログアウト         
+                
+    .main-content
+      .user-icon-box
+        .user-icon
+        .trade-info
+          .trade-info__user-name
+            空条 承太郎
+          .trade-info__count  
+            .trade-info__count__sell-title
+              出品数
+            .trade-info__count__sell-count
+              25      
+            .trade-info__count__buy-title
+              購入数
+            .trade-info__count__buy-count
+              15
+
+      %ul.trade-tab
+        %li.active 出品リスト
+        %li 購入リスト
+  
+      .tab-area
+        %ul.list-show
+          = link_to root_path do
+            %li.item ザ・ワールド
+          = link_to root_path do  
+            %li.item ザ・ワールド
+          = link_to root_path do      
+            %li.item ザ・ワールド
+          = link_to root_path do
+            %li.item ザ・ワールド
+          = link_to root_path do  
+            %li.item ザ・ワールド
+          = link_to root_path do      
+            %li.item ザ・ワールド
+          = link_to root_path do
+            %li.item ザ・ワールド
+          = link_to root_path do  
+            %li.item ザ・ワールド
+          = link_to root_path do      
+            %li.item ザ・ワールド
+          = link_to root_path do  
+            %li.item ザ・ワールド
+        %ul
+          = link_to root_path do
+            %li.item スタープラチナ
+          = link_to root_path do
+            %li.item スタープラチナ
+          = link_to root_path do      
+            %li.item スタープラチナ
+          = link_to root_path do       
+            %li.item スタープラチナ
+          = link_to root_path do        
+            %li.item スタープラチナ
+                       
+             
+
+
