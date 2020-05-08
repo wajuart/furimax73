@@ -15,7 +15,6 @@ class ProductsController < ApplicationController
   end
 
   def get_category_children
-    # binding.pry
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
@@ -30,7 +29,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    binding.pry
     @product = Product.new(product_params)
     if @product.save
       redirect_to root_path
