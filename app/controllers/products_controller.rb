@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     @product = Product.new
     @images = @product.images.build
     @product.images.new
-    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("選択して下さい")
   end
 
   def get_category_children
@@ -30,10 +30,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      @category_parent_array = ["---"]
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-    end
+      @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("選択して下さい")
       render :new
     end
   end
@@ -50,8 +47,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to root_path
   end
 
   private

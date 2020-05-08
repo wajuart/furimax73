@@ -74,7 +74,7 @@
                     %span.listing-default--require 必須
                     .listing-select-wrapper
                       .listing-select-wrapper__box
-                        = f.select :category, @category_parent_array, {include_blank: "選択して下さい", selected: "選択して下さい"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                        = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
 
                 -# = f.collection_select :category_id, Category_id.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
                 -# %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
