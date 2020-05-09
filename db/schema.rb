@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2020_05_05_004407) do
     t.integer "prefecture_id", null: false
     t.string "judgment"
     t.integer "category_id", null: false
-    t.integer "brand_id", null: false
+    t.integer "brand_id"
     t.integer "shipping_id", null: false
     t.integer "user_id", null: false
     t.integer "buyer_id"
