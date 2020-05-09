@@ -33,7 +33,7 @@
           - if user_signed_in?
             %ul.HeaderNav__lists--right
               %li.list--left
-                = link_to root_path do
+                = link_to user_path(current_user) do
                   マイページ
               %li.list--right
                 = link_to destroy_user_session_path, method: :delete do
