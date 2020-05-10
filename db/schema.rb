@@ -94,8 +94,6 @@ ActiveRecord::Schema.define(version: 2020_04_28_081925) do
     t.string "first_name_kana", default: "", null: false
     t.string "nickname", default: "", null: false
     t.date "birth_day", null: false
-    t.string "provider"
-    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
