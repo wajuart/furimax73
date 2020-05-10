@@ -5,7 +5,7 @@
         %ul.mypage-nav__list
           %li.mypage-nav__list__item-top
             マイページ
-          = link_to root_path do   
+          = link_to new_product_path do   
             %li.mypage-nav__list__item
               出品する
           = link_to root_path do     
@@ -34,21 +34,18 @@
               お問い合わせ                  
 
         %h3.mypage-nav__head
-          ジョジョの奇妙な冒険3部
+          FURIペイ
         %ul.mypage-nave__list
           = link_to root_path do
             %li.mypage-nav__list__item
-              花京院典明
+              売上・振込申請
           = link_to root_path do    
             %li.mypage-nav__list__item
-              ジョナサン・ジョースター 
-          = link_to root_path do
-            %li.mypage-nav__list__item-last
-              ジャン・ピエール・ポルナレフ
+              ポイント 
         %h3.mypage-nav__head
           設定
         %ul.mypage-nave__list
-          = link_to root_path do
+          = link_to edit_user_path(current_user) do
             %li.mypage-nav__list__item
               プロフィール
           = link_to root_path do

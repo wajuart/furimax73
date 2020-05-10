@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, except: [:index, :new, :create, :show, :get_category_children, :get_category_grandchildren]
+  before_action :set_product, except: [:index, :new, :create, :show, :get_category_children, :get_category_grandchildren, :search]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -50,6 +50,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def search
+    @products = Product.search(params[:keyword])
   end
 
   private
