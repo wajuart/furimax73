@@ -104,7 +104,7 @@
                 %span.necessary 必須
               .select-form
                 .select-area
-                  = f.collection_select :size, Size.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :size_id, Size.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .brand-form
@@ -113,7 +113,7 @@
                 %span.optional 任意
               .select-form
                 .select-area
-                  = f.collection_select :brand_id, Brand_id.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :brand_id, Brand.all, :id, :name, {}, class: 'sale-info'
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .status-form
@@ -122,7 +122,7 @@
                 %span.necessary 必須
               .select-form
                 .select-area
-                  = f.collection_select :status, Status.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :status_id, Status.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
         %hr.underline
@@ -142,7 +142,7 @@
                 %span.necessary 必須
               .select-form
                 .select-area
-                  = f.collection_select :shipping_cost, Shipping_cost.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :shippingcost_id, Shippingcost.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .method-form
@@ -151,7 +151,7 @@
                 %span.necessary 必須
               .select-form
                 .select-area
-                  = f.collection_select :shipping_id, Shipping_id.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :shipping_id, Shipping.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .area-form
@@ -160,7 +160,7 @@
                 %span.necessary 必須
               .select-form
                 .select-area
-                  = f.collection_select :prefecture_id, Prefecture_id.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .days-form
@@ -169,7 +169,7 @@
                 %span.necessary 必須
               .select-form
                 .select-area
-                  = f.collection_select :shipping_days, Shipping_days.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :shippingdays_id, Shippingdays.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
         %hr.underline
