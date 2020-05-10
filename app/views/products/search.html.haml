@@ -1,0 +1,27 @@
+.SearchView
+  %section.SearchView__result
+    %h2.head
+      検索結果
+    .products
+      .products__head
+        %h3.title
+          // 検索ワード挿入
+          シャネル
+      .products__lists
+        - @products.each do |product|
+          .list
+            = link_to "show" do
+              %figure.list-img
+                = image_tag product.images.first.src.url
+              .list-body
+                %h3.name
+                  = product.name
+                  .details
+                    %ul
+                      %li
+                        = product.price
+                      %li
+                        %i.fa.fa-star.likeicon
+                        0
+                    %p
+                      (税込)

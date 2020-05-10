@@ -23,27 +23,34 @@
         margin: 5px 30px 0 0;
       }
       &__search-box {
-        height: 30px;
-        width: 900px;
-        display: flex;
-        &__input {
+        height: 36px;
+        width: calc(100% - 171px);
+        position: relative;
+        .search-input {
           height: 36px;
-          width: 840px;
+          width: calc(100% - 36px);
           color: rgb(124, 124, 124);
           border: solid thin rgb(202, 201, 201);
           line-height: 36px;
           padding-left: 5px;
+          position: absolute;
         }
-        &__decision {
-          background-color: #3CCACE;
-          height: 36px;
-          width: 36px;
-          padding: 8px;
-        }
+          .search-btn {
+            background-color: #3CCACE;
+            height: 36px;
+            width: 36px;
+            color: #3CCACE;
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
           .search-icon img {
             height: 20px;
             width: 20px;
-          }
+            position: absolute;
+            top: 8px;
+            right: 8px;
+          }  
       }
     }
     .HeaderNav {
@@ -111,22 +118,32 @@
   p {
     font-size: 14px;
   }
-  .sell-btn {
-    height: 120px;
-    width: 120px;
-    background: #3CCACE;
-    text-align: center;
-    border-radius: 4%;
-    bottom: 32px;
-    right: 32px;
-    position: fixed;
-    padding: 15px;
-    img {
-      margin-top: 5px;
-      height: 54px;
-      width: 54px;
+  a { 
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      font-weight: bold;
     }
-  }
+    .sell-btn {
+      height: 120px;
+      width: 120px;
+      background: #3CCACE;
+      text-align: center;
+      border-radius: 4%;
+      bottom: 32px;
+      right: 32px;
+      position: fixed;
+      padding: 15px;
+      img {
+        margin-top: 5px;
+        height: 54px;
+        width: 54px;
+      }
+      &:hover {
+        background: rgb(97, 217, 221);
+      }
+    }
+  }  
 }
 
 .HeaderNav a {
@@ -140,7 +157,7 @@
   }
 }
 
-.footer a {
+.content a {
   color: #fff;
   text-decoration: none;
   &:hover {
@@ -148,4 +165,3 @@
     font-weight: bold;
   }
 }
-
