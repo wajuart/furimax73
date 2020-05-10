@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_05_004407) do
+ActiveRecord::Schema.define(version: 2020_04_28_081925) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -87,8 +87,6 @@ ActiveRecord::Schema.define(version: 2020_05_05_004407) do
     t.string "first_name_kana", default: "", null: false
     t.string "nickname", default: "", null: false
     t.date "birth_day", null: false
-    t.string "provider"
-    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
