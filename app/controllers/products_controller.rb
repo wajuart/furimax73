@@ -39,7 +39,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
     @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("選択して下さい")
 
     grandchild_category = @product.category
