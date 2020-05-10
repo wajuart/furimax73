@@ -18,7 +18,7 @@
               
           .HeaderMain__search-box          
             = form_tag(search_products_path, method: 'get') do      
-              = text_field_tag :keyword , '', placeholder: "キーワードから探す", class: "search-input" 
+              = text_field_tag :keyword, '', placeholder: "キーワードから探す", class: "search-input" 
               = submit_tag '検索', class: "search-btn" , name: nil           
               = link_to(search_products_path, method: 'get') do
                 .search-icon
