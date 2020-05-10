@@ -122,22 +122,32 @@
   p {
     font-size: 14px;
   }
-  .sell-btn {
-    height: 120px;
-    width: 120px;
-    background: #3CCACE;
-    text-align: center;
-    border-radius: 4%;
-    bottom: 32px;
-    right: 32px;
-    position: fixed;
-    padding: 15px;
-    img {
-      margin-top: 5px;
-      height: 54px;
-      width: 54px;
+  a { 
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      font-weight: bold;
     }
-  }
+    .sell-btn {
+      height: 120px;
+      width: 120px;
+      background: #3CCACE;
+      text-align: center;
+      border-radius: 4%;
+      bottom: 32px;
+      right: 32px;
+      position: fixed;
+      padding: 15px;
+      img {
+        margin-top: 5px;
+        height: 54px;
+        width: 54px;
+      }
+      &:hover {
+        background: rgb(97, 217, 221);
+      }
+    }
+  }  
 }
 
 .HeaderNav a {
@@ -151,7 +161,7 @@
   }
 }
 
-.footer a {
+.content a {
   color: #fff;
   text-decoration: none;
   &:hover {
@@ -159,4 +169,3 @@
     font-weight: bold;
   }
 }
-
