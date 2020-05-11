@@ -75,6 +75,17 @@
               %li.optinal-btn
                 = link_to "#" do
                   不適切な商品の通報
+          .edit-menu
+            - if user_signed_in? && current_user.id == @product.user_id
+              .more
+                %ul.more_list
+                  %li.edit-btn.fa.fa-edit
+                    = link_to '編集', "/products/#{@product.id}/edit", method: :get
+                  %li.delete-btn.fas.fa-trash-alt
+                    = link_to '削除', "/products/#{@product.id}", method: :delete
+          .parcase-product
+            .parcase-btn
+              = link_to "購入する", purchase_products_path, class:"purchase-btn__text"
         .comment-box
           %ul.comment-contents
           %form.new-comment-form
