@@ -77,14 +77,18 @@
         display: flex;
         justify-content: center;
         .user-icon {
-          background-color: rgb(255, 247, 240);
-          background-image: url(https://pics.prcm.jp/dona1118/82181124/png/82181124.png);
-          background-size: 100%;
+          background-color: #fff0f0;
           height: 160px;
           width: 160px;
           margin-right: 40px;
           border: solid thin;
-          border-radius: 50%;
+          border-radius: 30%;
+          img {
+            height: 160px;
+            width: 130px;
+            display: block;
+            margin: 0 auto;
+          }
         }
         .trade-info {
           width: 300px;
