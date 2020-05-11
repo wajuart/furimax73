@@ -86,3 +86,4 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem "omniauth-rails_csrf_protection"
 gem 'active_hash'
+gem 'dotenv-rails'
