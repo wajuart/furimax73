@@ -38,30 +38,29 @@ class CardsController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
+    if @card.blank?
       redirect_to action: "new" 
     else
       Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
 
   def buy #クレジット購入
-    if card.blank?
+    if @card.blank?
       redirect_to action: "new"
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
       @product = Product.find(params[:product_id])
      # 購入した際の情報を元に引っ張ってくる
-      card = current_user.credit_card
+      @card = current_user.credit_card
      # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
      # キーをセットする(環境変数においても良い)
       Payjp::Charge.create(
       amount: @product.price, #支払金額
-      customer: card.customer_id, #顧客ID
+      customer: @card.customer_id, #顧客ID
       currency: 'jpy', #日本円
       )
      # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
