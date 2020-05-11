@@ -43,6 +43,8 @@
             position: absolute;
             top: 0;
             right: 0;
+            opacity: 0;
+            z-index: 2;
           }
           .search-icon img {
             height: 20px;
@@ -50,6 +52,16 @@
             position: absolute;
             top: 8px;
             right: 8px;
+            z-index: 1;
+          }
+          .search-btn_back {
+            background-color: #3CCACE;
+            height: 36px;
+            width: 36px;
+            color: #3CCACE;
+            position: absolute;
+            top: 0;
+            right: 0;
           }  
       }
     }
