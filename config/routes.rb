@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       get 'search'
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'purchase/:id'=> 'products#purchase', as: 'purchase'          #購入確認ページ
+      post 'pay/:id'=> 'products#pay', as: 'pay'                        #httpメソッドはpostなので注意
+      get 'done/:id'=> 'products#done', as: 'done'                      #購入完了ページ
     end
   end
   resources :destinations, only: [:index, :edit, :update]

@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
 
   before_action :set_product, except: [:index, :new, :create, :show, :get_category_children, :get_category_grandchildren, :search]
+  before_action :set_card, only: [:purchase, :pay, :done]
+
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -70,6 +72,41 @@ class ProductsController < ApplicationController
     @products = Product.search(params[:keyword])
   end
 
+  def purchase
+    if @card.blank?
+      flash.now[:alert] = 'カードを登録してください。'
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      #保管した顧客IDでpayjpから情報取得
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+    end
+  end
+
+  def pay
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    charge = Payjp::Charge.create(
+    amount: @product.price,
+    customer: @card.customer_id,
+    card: params['payjp-token'],
+    currency: 'jpy'
+    )
+    if @product.update( buyer_id: current_user.id)
+      redirect_to done_products_path(@product.id)
+    else
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
+  def done
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    #保管した顧客IDでpayjpから情報取得
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+    @default_card_information = customer.cards.retrieve(@card.card_id)
+  end
+
   private
 
   def product_params
@@ -78,6 +115,10 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def set_card
+    @card = Card.find_by(user_id: current_user.id)
   end
 
 end
