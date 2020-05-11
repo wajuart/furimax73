@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
 
   before_action :set_product, except: [:index, :new, :create, :show, :get_category_children, :get_category_grandchildren, :search]
+  before_action :set_card, only: [:purchase, :pay, :done]
+
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -71,24 +73,22 @@ class ProductsController < ApplicationController
   end
 
   def purchase
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
+    if @card.blank?
       flash.now[:alert] = 'カードを登録してください。'
     else
       Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
       #保管した顧客IDでpayjpから情報取得
-      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
 
   def pay
-    card = Card.where(user_id: current_user.id).first
     Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
     charge = Payjp::Charge.create(
     amount: @product.price,
-    customer: card.customer_id,
+    customer: @card.customer_id,
     card: params['payjp-token'],
     currency: 'jpy'
     )
@@ -100,12 +100,11 @@ class ProductsController < ApplicationController
   end
 
   def done
-    card = Card.where(user_id: current_user.id).first
     Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
     #保管した顧客IDでpayjpから情報取得
-    customer = Payjp::Customer.retrieve(card.customer_id)
+    customer = Payjp::Customer.retrieve(@card.customer_id)
     #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
-    @default_card_information = customer.cards.retrieve(card.card_id)
+    @default_card_information = customer.cards.retrieve(@card.card_id)
   end
 
   private
@@ -116,6 +115,10 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def set_card
+    @card = Card.find_by(user_id: current_user.id)
   end
 
 end
