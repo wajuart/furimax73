@@ -70,6 +70,44 @@ class ProductsController < ApplicationController
     @products = Product.search(params[:keyword])
   end
 
+  def purchase
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+      flash.now[:alert] = 'カードを登録してください。'
+    else
+      Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
+      #保管した顧客IDでpayjpから情報取得
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    end
+  end
+
+  def pay
+    card = Card.where(user_id: current_user.id).first
+    Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
+    charge = Payjp::Charge.create(
+    amount: @product.price,
+    customer: card.customer_id,
+    card: params['payjp-token'],
+    currency: 'jpy'
+    )
+    if @product.update( buyer_id: current_user.id)
+      redirect_to done_products_path(@product.id)
+    else
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
+  def done
+    card = Card.where(user_id: current_user.id).first
+    Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
+    #保管した顧客IDでpayjpから情報取得
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+    @default_card_information = customer.cards.retrieve(card.card_id)
+  end
+
   private
 
   def product_params
