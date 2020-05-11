@@ -68,6 +68,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    if @product.destroy
+      redirect_to root_path
+    else
+      redirect_to product_path(@product.id)
+    end
   end
 
   def search
