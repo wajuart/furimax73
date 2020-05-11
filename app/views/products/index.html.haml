@@ -1,7 +1,3 @@
-= link_to '出品', new_product_path
-%br/
-.contents
-  = render @products
 
 .top-view
   %section.top-view__top-img
@@ -99,54 +95,28 @@
           %h3.title
             新規投稿商品
       .products__lists
-        .list
-          = link_to "/" do
-            %figure.list-img
-              =image_tag asset_path("pict/a007.png")
-            .list-body
-              %h3.name
-                product3
-                .details
-                  %ul
-                    %li
-                      30000円
-                    %li
-                      %i.fa.fa-star.likeicon
-                      0
-                  %p
-                    (税込)
-        .list
-          = link_to "/" do
-            %figure.list-img
-              =image_tag asset_path("pict/a007.png")
-            .list-body
-              %h3.name
-                product3
-                .details
-                  %ul
-                    %li
-                      30000円
-                    %li
-                      %i.fa.fa-star.likeicon
-                      0
-                  %p
-                    (税込)
-        .list
-          = link_to "/" do
-            %figure.list-img
-              =image_tag asset_path("pict/a007.png")
-            .list-body
-              %h3.name
-                product3
-                .details
-                  %ul
-                    %li
-                      30000円
-                    %li
-                      %i.fa.fa-star.likeicon
-                      0
-                  %p
-                    (税込)
+        - @products.each do |product|
+          .list
+            = link_to "/" do
+              %figure.list-img
+                -if product.buyer_id.present? 
+                  %p.sold-out
+                    SOLD OUT
+                = image_tag product.images.first.src.url
+              .list-body
+                %h3.name
+                  = product.name
+                  .details
+                    %ul
+                      %li
+                        = product.price
+                        円
+                      %li
+                        %i.fa.fa-star.likeicon
+                        0
+                    %p
+                      (税込)
+          
 
   %section.top-view__pickup
     %h2.head
@@ -157,54 +127,27 @@
           %h3.title
             アーカイブ
       .products__lists
-        .list
-          = link_to "/" do
-            %figure.list-img
-              =image_tag asset_path("pict/a007.png")
-            .list-body
-              %h3.name
-                product3
-                .details
-                  %ul
-                    %li
-                      30000円
-                    %li
-                      %i.fa.fa-star.likeicon
-                      0
-                  %p
-                    (税込)
-        .list
-          = link_to "/" do
-            %figure.list-img
-              =image_tag asset_path("pict/a007.png")
-            .list-body
-              %h3.name
-                product3
-                .details
-                  %ul
-                    %li
-                      30000円
-                    %li
-                      %i.fa.fa-star.like-icon
-                      0
-                  %p
-                    (税込)
-        .list
-          = link_to "/" do
-            %figure.list-img
-              =image_tag asset_path("pict/a007.png")
-            .list-body
-              %h3.name
-                product3
-                .details
-                  %ul
-                    %li
-                      30000円
-                    %li
-                      %i.fa.fa-star.like-icon
-                      0
-                  %p
-                    (税込)
+        - @products2.each do |product|
+          .list
+            = link_to "/" do
+              %figure.list-img
+                -if product.buyer_id.present? 
+                  %p.sold-out
+                    SOLD OUT
+                = image_tag product.images.first.src.url
+              .list-body
+                %h3.name
+                  = product.name
+                  .details
+                    %ul
+                      %li
+                        = product.price
+                        円
+                      %li
+                        %i.fa.fa-star.likeicon
+                        0
+                    %p
+                      (税込)
 
 %aside.bottom-img
   .contents
