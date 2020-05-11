@@ -1,6 +1,8 @@
 class Destination < ApplicationRecord
   belongs_to :user, optional: true
-  validates :post_code, :prefecture, :city, :address, :family_name, :first_name, :family_name_kana, :first_name_kana, presence: true
+  validates :prefecture, :city, :address, :family_name, :first_name, :family_name_kana, :first_name_kana, presence: true
+
+  validates :post_code, numericality: true
 
   enum prefecture:{
     北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
