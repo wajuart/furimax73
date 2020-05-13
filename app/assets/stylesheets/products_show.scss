@@ -135,30 +135,45 @@
           }
           .edit-menu {
             .more {
-              ul.more_list {
+              .more_list {
                 display: flex;
                 justify-content: space-around;
                 margin-top: 20px;
-                li {
-                  color: #fff;
-                  line-height: 48px;
+                a.edit-btn {
+                  background: #3CCACE;
+                  border: 1px solid #3CCACE;
+                  height: 48px;
                   width: 30%;
                   font-size: 18px;
                   border-radius: 100px;
-                  text-align: center;
                   text-decoration: none;
-                  a {
-                    color: #fff;
+                  p.text {
                     text-decoration: none;
+                    color: #fff;
+                    height: 48px;
+                    width: 20%;
+                    line-height: 2.5;
+                    margin: 0 auto;
+                    display: flex;
                   }
                 }
-                li.edit-btn {
-                  background: #3CCACE;
-                  border: 1px solid #3CCACE;
-                }
-                li.delete-btn {
-                  background: #999999;
-                  border: 1px solid #999999;
+                a.delet-btn {
+                  background: #ccc;
+                  border: 1px solid #ccc;
+                  height: 48px;
+                  width: 30%;
+                  font-size: 18px;
+                  border-radius: 100px;
+                  text-decoration: none;
+                  p.text {
+                    text-decoration: none;
+                    color: #fff;
+                    height: 48px;
+                    width: 20%;
+                    line-height: 2.5;
+                    margin: 0 auto;
+                    display: flex;
+                  }
                 }
               }
             }
@@ -167,7 +182,7 @@
             display: flex;
             justify-content: center;
             margin-top: 20px;
-            .parcase-btn{
+            .purchase-btn{
               background: #3CCACE;
               border: 1px solid #3CCACE;
               line-height: 60px;
@@ -175,11 +190,8 @@
               font-size: 18px;
               text-align: center;
               text-decoration: none;
-              a{
-                background: #3CCACE;
-                border: 1px solid #3CCACE;
+              &__text{
                 color: #fff;
-                text-decoration: none;
               }
             }
           }

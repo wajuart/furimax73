@@ -1,3 +1,278 @@
-// Place all the styles related to the cards controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// カード登録画面
+
+form.cards-form{
+  background-color: #f8f8f8;
+  padding-top: 70px;
+  .cards_header{
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    h2.cards_title{
+      text-align: center;
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
+    }
+  }
+  .cards_contents{
+    padding: 40px 40px 64px;
+    border-top: 1px solid #f5f5f5;
+    max-width: 343px;
+    margin: 0 auto;
+    label{
+      font-size: 14px;
+      font-weight: bold;
+    }
+    input{
+      width: 100%;
+      margin: 8px 0 0;
+      height: 48px;
+      padding: 10px 16px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+      line-height: 1.5;
+      font-size: 16px;
+      outline: none;
+    }
+    ul.cards-logo{
+      list-style: none;
+      display: flex;
+      li{
+        margin-right: 2px;
+        img{
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+    select{
+      width: 40%;
+      margin: 8px 0 0;
+      height: 48px;
+      padding: 5px 16px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+      line-height: 1.5;
+      font-size: 16px;
+      outline: none;
+    }
+    .submit{
+      background: #3CCACE;
+      cursor: pointer;
+      color: #fff;
+
+    }
+  }
+}
+
+.cards-show{
+  background-color: #f8f8f8;
+  padding-top: 70px;
+  &__title{
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    h2{
+      text-align: center;
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
+    }
+    .cards-contents{
+      padding: 40px 40px 64px;
+      border-top: 1px solid #f5f5f5;
+      margin: 0 auto;
+      p{
+        text-align: center;
+        font-size: 20px;
+      }
+      form{
+        text-align: center;
+        padding-top: 30px;
+        button{
+          width: 40%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 5px 16px 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          outline: none;
+          cursor: pointer;
+          background: #3CCACE;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+// 購入画面
+
+.purchase-verification{
+  background-color: #f8f8f8;
+  padding-top: 70px;
+  &__header{
+    width: 700px;
+    height: 1300px;
+    margin: 0 auto;
+    background: #fff;
+    h2.purchase-title{
+      text-align: center;
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
+    }
+    .done-message{
+      text-align: center;
+    }
+  }
+  .top-images{
+    padding: 40px 40px 40px;
+    border-top: 1px solid #f5f5f5;
+    margin: 0 auto;
+    text-align: center;
+    ul{
+      li{
+        .top-image{
+          object-fit: cover;
+          height: 346px;
+          max-width: 100%;
+        }
+        ul {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 10px;
+          li {
+            width: 25%;
+            img.sub-image {
+              object-fit: cover;
+              height: 200px;
+              width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .contents-title{
+    width: 400px;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 0px 16px;
+    line-height: 1.5;
+    font-size: 16px;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    h2.title{
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+  .contents-btn{
+    width: 500px;
+    margin: 0 auto;
+    a{
+      text-decoration: none;
+      h2.title{
+        text-align: center;
+        width: 500px;
+        margin: 8px auto;
+        height: 60px;
+        padding: 20px 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        line-height: 1.5;
+        font-size: 16px;
+        outline: none;
+        background: #ccc;
+        color: #fff;
+      }
+    }
+    button.buy-btn{
+      text-align: center;
+      width: 500px;
+      margin: 8px auto;
+      height: 60px;
+      padding: 20px 16px;
+      border: 1px solid #3CCACE;
+      border-radius: 4px;
+      line-height: 1.5;
+      font-size: 16px;
+      outline: none;
+      background: #3CCACE;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+  .buyer-contents{
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    h2.delivary-title{
+      text-align: center;
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
+    }
+    .address-delivary{
+      border-top: #f5f5f5 1px solid;
+      width: 400px;
+      margin: 8px 0 0;
+      height: 48px;
+      padding: 30px 16px 0px 16px;
+      line-height: 1.5;
+      font-size: 16px;
+      outline: none;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      h2.title{
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    .name-delivary{
+      width: 400px;
+      margin: 8px 0 0;
+      height: 48px;
+      padding: 30px 16px 0px 16px;
+      line-height: 1.5;
+      font-size: 16px;
+      outline: none;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      h2.title{
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    .method-number{
+      width: 400px;
+      margin: 8px 0 0;
+      height: 48px;
+      padding: 30px 16px 0px 16px;
+      line-height: 1.5;
+      font-size: 16px;
+      outline: none;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      h2.title{
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    .return-top{
+      text-align: center;
+      padding-top: 50px;
+    }
+  }
+}
