@@ -1,0 +1,143 @@
+*{
+  box-sizing: border-box;
+}
+
+
+.user_intro {
+  background-color: #f1f1f1;
+  height: 100%;
+  padding: 40px;
+  .profile-container {
+    background-color: #ffffff;
+    height: 100%;
+    width: 700px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto;
+    .profile-head {
+      height: 50px;
+      text-align: center;
+      padding: 8px 24px;
+    }
+    .profile-icon {
+      background-color: rgb(232, 254, 255);
+      height: 156px;
+      padding: 20px 16px ;
+      display: flex;
+      justify-content: center;
+      .photo-box {
+        margin-right: 30px;
+        .input {
+          display: none;
+        }
+        .user_image { 
+          background-color: rgb(255, 247, 240);
+          background-image: url(https://4.bp.blogspot.com/-xN3OofpDu2A/XAnvN3Vpj-I/AAAAAAABQmA/guSSixGZ6cYFey2lgEUnc5q3mEUj6quOACLcBGAs/s800/business_man1_1_smile.png);
+          background-size: 100%;
+          height: 100px;
+          width: 100px;
+          border: solid thin;
+          border-radius: 30%;
+          margin: 10px 20px 0 0; 
+          }
+        }
+      }
+      .profile_right {
+        width: 200px;
+        font-weight: 500;
+        .nickname {
+          font-size: 24px;
+          text-align: center;
+          margin: 20px 0 15px;
+        }
+        .sell_info {
+          padding: 10px;
+          display: flex;
+          justify-content: space-around;
+          .title {
+            font-size: 18px;
+          }  
+          .count {
+            font-size: 20px;
+          }
+        }
+      }  
+    .profile-setting {
+      height: 362px;
+      padding: 40px 16px;
+      &__text-box {
+        .introduction {
+          height: 280px;
+          width: 668px;
+          font-size: 16px;
+          font-weight: normal;
+          border: solid thin #dddddd;
+          padding: 15px;
+        }
+      }
+    }
+    .trade-tab { 
+      display: flex;
+    }
+    .trade-tab li {
+      background-color: #3CCACE;
+      height: 70px;
+      width: 350px;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 70px;
+      text-align: center;
+      cursor: pointer;
+      transition: .3s;
+      &:hover {
+        opacity: 0.7;
+      }
+    } 
+    .sell-tab {
+      background-color: #3CCACE;
+      color: #ffffff;
+      font-size: 15px;
+      text-align: center;
+      padding: 15px 0;
+      cursor: auto;
+    } 
+    .tab-area {
+      background-color: #ffffff;
+      .list-show {
+        .item {
+          height: 80px;
+          padding: 16px;
+          border-bottom: solid thin #ebebeb;
+          display: flex;
+          font-weight: 500;
+          position: relative;
+          &:hover {
+            background-color: #f8f8f8;
+            color:#3CCACE;
+            font-weight: bold;
+          }
+          .image-box {
+            border: solid thin #cccccc;
+            height: 50px;
+            width: 50px;
+            margin: 0 30px 0 10px;
+            img {
+              width: 100%;
+              height: 50px;
+              object-fit: contain;
+            }
+          }  
+          .name {
+            font-size: 18px;
+          }
+          .create-date {
+            position: absolute;
+            right: 20px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

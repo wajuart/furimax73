@@ -34,27 +34,23 @@
             height: 48px;
             width: 100%;
             padding: 16px;
+            display: flex;
             border-bottom: solid thin #ebebeb;
+            position: relative;
             &:hover {
               background-color: #f8f8f8;
               color:#3CCACE;
               font-weight: bold;
-            }
-          }
-          &__item-last {
-            background-color: #ffffff;
-            font-size: 14px;
-            height: 48px;
-            width: 100%;
-            padding: 16px;
-            &:hover {
-              background-color: #f8f8f8;
-              color:#3CCACE;
-              font-weight: bold;
-            }
+            }  
+            .icon-arrow-right {
+              position: absolute;
+              top: 50%;
+              right: 16px;
+              color: #ccc;
+              transform: translate(0, -50%);
+              }
           }
         }
-        
         &__head {
           color: #3CCACE;
           font-weight: bold;
@@ -63,7 +59,6 @@
           width: 100%;
           margin-top: 30px;
           padding: 16px;
-
         }
       }  
     }
@@ -92,7 +87,7 @@
         }
         .trade-info {
           width: 300px;
-          &__user-name {
+          &__user-nickname {
             font-size: 24px;
             margin: 24px 0 30px 0;
             text-align: center;
@@ -147,12 +142,32 @@
           .item {
             height: 80px;
             padding: 16px;
+            font-size: 18px;
             border-bottom: solid thin #ebebeb;
+            display: flex;
             &:hover {
               background-color: #f8f8f8;
               color:#3CCACE;
               font-weight: bold;
             }
+            .image-box {
+              border: solid thin #cccccc;
+              height: 50px;
+              width: 50px;
+              margin: 0 30px 0 10px;
+              
+              img {
+                width: 100%;
+                height: 50px;
+                object-fit: contain;
+              }
+            .icon-arrow-right {
+              top: 50%;
+              right: 15px;
+              color: #ccc;
+              transform: translate(0, -50%);
+            }
+            }  
           }
         }
       }      

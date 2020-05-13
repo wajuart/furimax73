@@ -7,10 +7,12 @@
         .photo-box
           %input.user_image{type: "file", accept: "photo/*"}
       .nickname-box
-        %input.nickname{placeholder: "ニックネーム", type: "text"}
+        .current-nickname
+          = current_user.nickname
+        %input.edit-nickname{placeholder: "ニックネーム編集", type: "text"}
     .profile-setting
       .profile-setting__text-box
-        %textarea.introduction{placeholder: "自己紹介文を入力してください"} 
+        %textarea.introduction_edit{placeholder: "自己紹介文を入力してください"} 
       = link_to user_path do
         .profile-setting__btn-box
           %button.edit-btn{type: "submit"} 変更する
