@@ -1,8 +1,9 @@
--# 商品購入完了画面
+-# 商品出品完了画面
 .purchase-verification
+  = render partial: 'sub_header'
   .purchase-verification__header
     %h2.purchase-title
-      購入完了
+      出品が完了しました
     .done-message
       %p 発送をお待ちください
       %p 出品者からの発送通知をお待ち下さい
@@ -40,10 +41,6 @@
         %h2.title
           支払方法
           %h2
-            = "**** **** **** " + @default_card_information.last4
-          %h2
-            - exp_month = @default_card_information.exp_month.to_s
-            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-            = exp_month + " / " + exp_year
       .return-top
         =link_to 'TOPページへ戻る',root_path, class:"return_btn"
+  = render partial: 'sub_footer'
