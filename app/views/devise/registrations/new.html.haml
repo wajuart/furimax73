@@ -69,20 +69,4 @@
           .form-group-submit
             = f.submit '次へ進む', class: "btn-default-blue", url: "destination_path"
   
-  -# 浅井さんのフッター引用
-  -# レンダーなりで変えるまで固定
-  .footer-sale
-    .contents
-      %ul.contents-list
-        %li.content
-          = link_to "#", class: "private-policy" do
-            プライバシーポリシー
-        %li.content
-          = link_to "#", class: "user-policy" do
-            フリマ利用規約
-        %li.content
-          = link_to "#", class: "point-policy" do
-            ポイントに関する特約
-    = link_to "#", class: "logo" do
-      = image_tag(asset_path("logo/logo.png"), class:"logo-image")
-    .company-name ©︎ FURIMA
+  = render partial: 'shared/sub_footer'
