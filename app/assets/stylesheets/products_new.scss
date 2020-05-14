@@ -228,6 +228,28 @@
   }
 }
 
+// JSに効かせてる子要素、孫要素のセレクトボックスのレイアウト
+.listing-select-wrapper__added{
+  
+  .listing-select-wrapper__box--select{
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #222;
+  font-size: 16px;
+  height: 48px;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0 56px 0 16px;
+  margin-top: 16px;
+  }
+}
+
 
 
 // 本文
