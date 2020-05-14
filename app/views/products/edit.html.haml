@@ -1,5 +1,5 @@
 .sale-page
-  = render partial: 'sub_header'
+  = render partial: 'shared/sub_header'
   .main-sale
     .main-sale__input-form
       = form_for @product do |f|
@@ -167,3 +167,5 @@
         .btn-form
           = f.submit "出品する", class:"sale-btn"
           %button.save-btn{type: "button"} 下書きに保存
+
+  = render partial: 'shared/sub_footer'

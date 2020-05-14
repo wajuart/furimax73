@@ -31,7 +31,7 @@
                 %tr
                   %th 出品者
                   %td
-                    = link_to @product.user.nickname, user_path(current_user)
+                    = link_to @product.user.nickname, users_path(current_user)
                 %tr
                   %th カテゴリー
                   %td
@@ -120,7 +120,7 @@
             %span
             後ろの商品 >
       .relate-item
-        = link_to "#" do
-          メンズをもっと見る
+        = link_to root_path do
+          商品一覧に戻る
 
 = render partial: 'shared/main_footer'          
