@@ -1,3 +1,5 @@
+= render partial: 'shared/sub_header'
+
 -# 商品購入完了画面
 .purchase-verification
   .purchase-verification__header
@@ -47,3 +49,5 @@
             = exp_month + " / " + exp_year
       .return-top
         =link_to 'TOPページへ戻る',root_path, class:"return_btn"
+
+= render partial: 'shared/sub_footer'

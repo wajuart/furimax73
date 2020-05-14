@@ -1,3 +1,5 @@
+= render partial: 'shared/main_header'
+
 .MypageDisplay  
   .MypageContainer
     .side-var
@@ -93,8 +95,9 @@
                 .fa.fa-caret-right.fa-2x 
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                支払い方法
+              = link_to new_card_path do
+                .item-name
+                  支払い方法
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x
           = link_to user_path do   
@@ -192,4 +195,6 @@
                 .name
                   ブレスレット
                 .updated
-                  = product.updated_at.strftime("%Y-%m-%d %H:%M")  
+                  = product.updated_at.strftime("%Y-%m-%d %H:%M") 
+
+= render partial: 'shared/main_footer'                   

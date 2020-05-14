@@ -1,5 +1,5 @@
 .sale-page
-  = render partial: 'sub_header'
+  = render partial: 'shared/sub_header'
   .main-sale
     .main-sale__input-form
       = form_for @product do |f|
@@ -167,4 +167,4 @@
             = link_to "#", class: "back" do
               加盟店規約
             に同意したことになります。
-  = render partial: 'sub_footer'
+  = render partial: 'shared/sub_footer'

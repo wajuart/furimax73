@@ -1,3 +1,5 @@
+= render partial: 'shared/sub_header'
+
 .cards-show
   .cards-show__title
     %h2 登録クレジットカード情報
@@ -13,3 +15,5 @@
         = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
           %input{ type: "hidden", name: "card_id", value: "" }
           %button 削除する
+
+= render partial: 'shared/sub_footer'

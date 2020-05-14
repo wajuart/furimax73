@@ -1,3 +1,5 @@
+= render partial: 'shared/sub_header'
+
 = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm", class: "cards-form") do
   .cards_header
     %h2.cards_title
@@ -58,3 +60,5 @@
       #card_token
       %br
       = submit_tag "追加する", id: "token_submit", class: "submit"
+
+= render partial: 'shared/sub_footer'      
