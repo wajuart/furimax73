@@ -1,10 +1,9 @@
 .sale-page
-  .header-sale
-    = link_to root_path do
-      = image_tag(asset_path("logo/logo.png"), class:"logo")
+  = render partial: 'sub_header'
   .main-sale
     .main-sale__input-form
       = form_for @product do |f|
+        = render "devise/shared/error_messages", resource: @product
         .sale-image
           .sale-image__form
             .image-title
@@ -12,37 +11,18 @@
               %span.necessary 必須
             %p.max-uploads
               最大4枚までアップロードできます
-            #files.upload-image
-              .upload-image__box
-                .file-preview
-                  = image_tag(asset_path("icon/icon_camera.png"), class:"camera-icon")
-                .file-picker
-                  %input.image{type: "file", accept: "image/*"}
-              .upload-image__box
-                .file-preview
-                  = image_tag(asset_path("icon/icon_camera.png"), class:"camera-icon")
-                .file-picker
-                  %input.image{type: "file", accept: "image/*"}
-              .upload-image__box
-                .file-preview
-                  = image_tag(asset_path("icon/icon_camera.png"), class:"camera-icon")
-                .file-picker
-                  %input.image{type: "file", accept: "image/*"}
-              .upload-image__box
-                .file-preview
-                  = image_tag(asset_path("icon/icon_camera.png"), class:"camera-icon")
-                .file-picker
-                  %input.image{type: "file", accept: "image/*"}
             .post__drop__box__container
               .prev-content
               .label-content
-                %label{for: "product[images_attributes][#{@product.images.count}][src]", class: "abel-box", id: "label-box--0"}
+                = f.label :"images_attributes_#{@product.images.count}_src", class: "label-box", id: "label-box--#{@product.images.count}" do
                   %pre.label-box__text-visible クリックしてファイルをアップロード
               .hidden-content
                 = f.fields_for :images do |i|
                   = i.file_field :src, class: "hidden-field"
-                = f.fields_for :images do |i|
-                  = i.file_field :src, class: "hidden-field"
+                  = i.check_box:_destroy, class: "hidden-checkbox"
+                - @product.images.length.upto(3) do |i|
+                  %input{name: "product[images_attributes][#{i}][src]", id: "product_images_attributes_#{i}_src", class:"hidden-field", type:"file"}
+                  %input{name: "product[images_attributes][#{i}][_destroy]", id: "product_images_attributes_#{i}__destroy", class:"hidden-checkbox", type:"checkbox", value:"#{i}"}
         %hr.underline
         .product-description
           .product-description__form
@@ -51,12 +31,12 @@
                 %label.sale-info 商品名
                 %span.necessary 必須
               .input-form
-                = f.text_field :name, class: "sale-info", placeholder: "40文字まで", type: "text"
+                = f.text_field :name, class: "sale-info", placeholder: "40文字まで", type: "text", maxlength: "40", required: ""
             .description-form
               .name
                 %label.sale-info 商品の説明
                 %span.necessary 必須
-              = f.text_area :description, class: "sale-info", rows: "7", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+              = f.text_area :description, class: "sale-info", rows: "7", maxlength: "1000", required: "", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
               .counter 0/1000
         %hr.underline
         .product-detail
@@ -67,44 +47,20 @@
                 %label.sale-info カテゴリー
                 %span.necessary 必須
               .select-form
-              
-                .listing-form-box
-                  .listing-product-detail__category
-                    = f.label 'カテゴリー', class: 'listing-default__label'
-                    %span.listing-default--require 必須
-                    .listing-select-wrapper
-                      .listing-select-wrapper__box
-                        = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-
-                -# = f.collection_select :category_id, Category_id.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
-                -# %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
-                -#   %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
-
-              -# .select-form
-              -#   .select-area
-              -#     %select.sale-info{name: "category-id"}
-              -#       %option{label: "選択してください"} 選択してください
-              -#       %option{value: "1", label: "トップス"} トップス
-              -#       %option{value: "2", label: "ジャケット"} ジャケット
-              -#       %option{value: "3", label: "パンツ"} パンツ
-              -#     %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
-              -#       %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
-              -# .select-form
-              -#   .select-area
-              -#     %select.sale-info{name: "category-id"}
-              -#       %option{label: "選択してください"} 選択してください
-              -#       %option{value: "1", label: "ポロシャツ"} ポロシャツ
-              -#       %option{value: "2", label: "テーラードジャケット"} テーラードジャケット
-              -#       %option{value: "3", label: "デニム"} デニム
-              -#     %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
-              -#       %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
+                .listing-product-detail__category
+                  .listing-select-wrapper
+                    .listing-select-wrapper__box
+                    .select-area
+                      = f.select :category, @category_parent_array, {}, {class: 'sale-info', id: 'parent_category'}
+                      %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
+                        %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .size-form
               .name
                 %label.sale-info サイズ
                 %span.necessary 必須
               .select-form
                 .select-area
-                  = f.collection_select :size_id, Size.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :size_id, Size.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info', required: ""
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .brand-form
@@ -122,7 +78,7 @@
                 %span.necessary 必須
               .select-form
                 .select-area
-                  = f.collection_select :status_id, Status.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :status_id, Status.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info', required: ""
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
         %hr.underline
@@ -142,7 +98,7 @@
                 %span.necessary 必須
               .select-form
                 .select-area
-                  = f.collection_select :shippingcost_id, Shippingcost.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :shippingcost_id, Shippingcost.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info', required: ""
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .method-form
@@ -151,7 +107,7 @@
                 %span.necessary 必須
               .select-form
                 .select-area
-                  = f.collection_select :shipping_id, Shipping.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :shipping_id, Shipping.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info', required: ""
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .area-form
@@ -160,7 +116,7 @@
                 %span.necessary 必須
               .select-form
                 .select-area
-                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info', required: ""
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .days-form
@@ -169,7 +125,7 @@
                 %span.necessary 必須
               .select-form
                 .select-area
-                  = f.collection_select :shippingdays_id, Shippingdays.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info'
+                  = f.collection_select :shippingdays_id, Shippingdays.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: 'sale-info', required: ""
                   %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
         %hr.underline
@@ -177,7 +133,7 @@
           .price__form
             .title
               %p.title-name
-                価格（¥300〜9,999,999）
+                価格（¥500〜9,999,999）
                 = link_to "#" do
                   %svg.question{width: "24", height: "24", fill: "#222222", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
                     %path{d: "M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18.6A8.6,8.6,0,1,1,20.6,12,8.61,8.61,0,0,1,12,20.6Z"}
@@ -188,10 +144,11 @@
                 .price-name
                   %label.sale-info 販売価格
                   %span.necessary 必須
-                %span.yen ￥
+                %span.yen
+                  %i.fas.fa-yen-sign
                 .yen-form
                   .yen-form__box
-                    = f.number_field :price, class:"yen", placeholder: "0", type: "number", autocomplete: "off"
+                    = f.number_field :price, class:"yen", placeholder: "0", type: "number", autocomplete: "off", min: "500", max: "9999999", required: ""
               .fee-form
                 .name 販売手数料(10%)
                 %span.value ー
@@ -210,18 +167,4 @@
             = link_to "#", class: "back" do
               加盟店規約
             に同意したことになります。
-  .footer-sale
-    .contents
-      %ul.contents-list
-        %li.content
-          = link_to "#", class: "private-policy" do
-            プライバシーポリシー
-        %li.content
-          = link_to "#", class: "user-policy" do
-            フリマ利用規約
-        %li.content
-          = link_to "#", class: "point-policy" do
-            ポイントに関する特約
-    = link_to "#", class: "logo" do
-      = image_tag(asset_path("logo/logo.png"), class:"logo-image")
-    .company-name ©︎ FURIMA
+  = render partial: 'sub_footer'

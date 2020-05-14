@@ -3,135 +3,153 @@
 }
 
 // 繰り返し使用する要素
-hr.underline {
-  border-top-width: 1px;
-  border-top-color: #efefef;
-  border-left: 0 solid #efefef;
-  border-bottom: 0 solid #efefef;
-  border-right: 0 solid #efefef;
-  border-top-style: solid;
-  margin: 0;
-}
-
-label.sale-info {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.4em;
-}
-
-span.necessary {
-  margin-left: 8px;
-  font-size: 12px;
-  padding: 0 4px;
-  background-color: #ff0211;
-  color: #fff;
-  border-radius: 2px;
-  display: inline-block;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.4em;
-  margin: 0;
-}
-
-span.optional {
-  margin-left: 8px;
-  font-size: 12px;
-  padding: 0 4px;
-  background-color: #bfbfbf;
-  color: #fff;
-  border-radius: 2px;
-  display: inline-block;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.4em;
-  margin: 0;
-}
-
-input.sale-info {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: inherit;
-  height: 48px;
-  margin: 0;
-  outline: none;
-  padding: 0 16px;
-  width: inherit;
-}
-
-textarea.sale-info {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: #222;
-  font-size: 16px;
-  margin-top: 16px;
-  outline: none;
-  padding: 13px 16px;
-  resize: vertical;
-  vertical-align: middle;
-  width: 100%;
-}
-
-select.sale-info {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: #222;
-  font-size: 16px;
-  height: 48px;
-  line-height: 1;
-  margin: 0;
-  outline: none;
-  padding: 0 56px 0 16px;
-  width: 100%;
-}
-
-svg.arrow {
-  bottom: 0;
-  margin: auto;
-  pointer-events: none;
-  position: absolute;
-  right: 16px;
-  top: 0;
-}
-
-svg.question {
-  fill: rgb(0, 149, 238);
-  height: 16px;
-  margin-left: 4px;
-  vertical-align: -3px;
-  width: 16px;
-}
-
-.input-form {
-  margin-top: 16px;
-  width: 100%;
-}
-
-.select-form {
-  margin-top: 16px;
-  width: 100%;
-  .select-area {
-    display: inline-block;
-    position: relative;
-    width: inherit;
+  hr.underline {
+    border-top-width: 1px;
+    border-top-color: #efefef;
+    border-left: 0 solid #efefef;
+    border-bottom: 0 solid #efefef;
+    border-right: 0 solid #efefef;
+    border-top-style: solid;
+    margin: 0;
   }
+
+  //各項目の太字表示
+  label.sale-info {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4em;
+  }
+
+  //必須の表示
+  span.necessary {
+    margin-left: 8px;
+    font-size: 12px;
+    padding: 0 4px;
+    background-color: #ff0211;
+    color: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4em;
+    margin: 0;
+  }
+
+  //任意の表示
+  span.optional {
+    margin-left: 8px;
+    font-size: 12px;
+    padding: 0 4px;
+    background-color: #bfbfbf;
+    color: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4em;
+    margin: 0;
+  }
+
+  //入力欄の表示
+  .input-form {
+    margin-top: 16px;
+    width: 100%;
+  }
+  input.sale-info {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    height: 48px;
+    margin: 0;
+    outline: none;
+    padding: 0 16px;
+    width: 100%;
+  }
+
+  //テキスト入力欄の表示
+  textarea.sale-info {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #222;
+    font-size: 16px;
+    margin-top: 16px;
+    outline: none;
+    padding: 13px 16px;
+    resize: vertical;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  //選択欄の表示
+  .select-form {
+    width: 100%;
+    .select-area {
+      margin-top: 16px;
+      display: inline-block;
+      position: relative;
+      width: 100%;
+    }
+  }
+  select.sale-info {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #222;
+    font-size: 16px;
+    height: 48px;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    padding: 0 56px 0 16px;
+    width: 100%;
+  }
+
+  //選択欄の下矢印
+  svg.arrow {
+    bottom: 0;
+    margin: auto;
+    pointer-events: none;
+    position: absolute;
+    right: 16px;
+    top: 0;
+  }
+
+  //各タイトルの表示
+  .title-name {
+    color: rgb(136, 136, 136);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4em;
+    margin-bottom: 24px;
+  }
+
+  //タイトル横の?マークの表示
+  svg.question {
+    fill: rgb(0, 149, 238);
+    height: 16px;
+    margin-left: 4px;
+    vertical-align: -3px;
+    width: 16px;
+  }
+
+//バリデーションのエラーメッセージ部分
+#error_explanation {
+  color:#262626; 
+  background:#FFEBE8;
+  text-align: center;
+  border:2px solid #990000;
+  padding:12px; font-weight:850;
+  display: block;
 }
 
-.title-name {
-  color: rgb(136, 136, 136);
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.4em;
-  margin-bottom: 24px;
-}
-
+//画像投稿のJS部分
 .post__drop__box__container{
   display: block;
   margin: 16px auto 0;
@@ -144,7 +162,7 @@ svg.question {
     .preview-box {
       height: 190px;
       width: 140px;
-      margin: 0 15px 10px 0;
+      margin: 0 15px 10px 3px;
       .upper-box {
         height: 140px;
         width: 100%;
@@ -157,18 +175,9 @@ svg.question {
       .lower-box {
         display: flex;
         text-align: center;
-        .update-box {
-          color: #00b0ff;
-          width: 50%;
-          height: 50px;
-          line-height: 50px;
-          border: 1px solid #eee;
-          background: #f5f5f5;
-          cursor: pointer;
-        }
         .delete-box {
           color: #00b0ff;
-          width: 50%;
+          width: 100%;
           height: 50px;
           line-height: 50px;
           border: 1px solid #eee;
@@ -208,6 +217,15 @@ svg.question {
       }
     }
   }
+  //ファイル選択ボタンとチェックボックスを非表示
+  .hidden-content {
+    .hidden-field {
+      display: none;
+    }
+    .hidden-checkbox {
+      display: none;
+    }
+  }
 }
 
 
@@ -218,20 +236,6 @@ svg.question {
   flex-direction: column;
   min-height: 100vh;
   background: #f8f8f8;
-  .header-sale {
-    height: 128px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    a {
-      color: inherit;
-      text-decoration: none;
-      img.logo {
-        height: 49px;
-        width: 185px;
-      }
-    }
-  }
   .main-sale {
     background-color: rgb(255, 255, 255);
     margin: 0px auto;
@@ -388,7 +392,7 @@ svg.question {
                   margin: 0;
                   outline: none;
                   padding: 0 16px;
-                  width: inherit;
+                  width: 100%;
                 }
               }
             }
@@ -475,34 +479,6 @@ svg.question {
           word-break: keep-all;
         }
       }
-    }
-  }
-  .footer-sale {
-    padding: 40px 0px 41px;
-    text-align: center;
-    .contents {
-      .contents-list {
-        display: inline-block;
-        margin: -16px 0px 40px -16px;
-        .content {
-          display: inline-block;
-          font-size: 12px;
-          margin: 16px 0px 0px 16px;
-          a {
-            color: inherit;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-    .logo {
-      .logo-image {
-        height: 49px;
-        width: 185px;
-      }
-    }
-    .company-name {
-      font-size: 12px;
     }
   }
 }

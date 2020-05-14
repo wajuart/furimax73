@@ -1,0 +1,163 @@
+.purchase-verification{
+  background-color: #f8f8f8;
+  padding-top: 70px;
+  &__header{
+    width: 700px;
+    height: 1300px;
+    margin: 0 auto;
+    background: #fff;
+    h2.purchase-title{
+      text-align: center;
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
+    }
+    .done-message{
+      text-align: center;
+    }
+  }
+  .top-images{
+    padding: 40px 40px 40px;
+    border-top: 1px solid #f5f5f5;
+    margin: 0 auto;
+    text-align: center;
+    ul{
+      li{
+        .top-image{
+          object-fit: cover;
+          height: 346px;
+          max-width: 100%;
+        }
+        ul {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 10px;
+          li {
+            width: 25%;
+            img.sub-image {
+              object-fit: cover;
+              height: 200px;
+              width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .contents-title{
+    width: 400px;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 0px 16px;
+    line-height: 1.5;
+    font-size: 16px;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    h2.title{
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+  .contents-btn{
+    width: 500px;
+    margin: 0 auto;
+    a{
+      text-decoration: none;
+      h2.title{
+        text-align: center;
+        width: 500px;
+        margin: 8px auto;
+        height: 60px;
+        padding: 20px 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        line-height: 1.5;
+        font-size: 16px;
+        outline: none;
+        background: #ccc;
+        color: #fff;
+      }
+    }
+    button.buy-btn{
+      text-align: center;
+      width: 500px;
+      margin: 8px auto;
+      height: 60px;
+      padding: 20px 16px;
+      border: 1px solid #3CCACE;
+      border-radius: 4px;
+      line-height: 1.5;
+      font-size: 16px;
+      outline: none;
+      background: #3CCACE;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+  .buyer-contents{
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    h2.delivary-title{
+      text-align: center;
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
+    }
+    .address-delivary{
+      border-top: #f5f5f5 1px solid;
+      width: 400px;
+      margin: 8px 0 0;
+      height: 48px;
+      padding: 30px 16px 0px 16px;
+      line-height: 1.5;
+      font-size: 16px;
+      outline: none;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      h2.title{
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    .name-delivary{
+      width: 400px;
+      margin: 8px 0 0;
+      height: 48px;
+      padding: 30px 16px 0px 16px;
+      line-height: 1.5;
+      font-size: 16px;
+      outline: none;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      h2.title{
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    .method-number{
+      width: 400px;
+      margin: 8px 0 0;
+      height: 48px;
+      padding: 30px 16px 0px 16px;
+      line-height: 1.5;
+      font-size: 16px;
+      outline: none;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      h2.title{
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    .return-top{
+      text-align: center;
+      padding-top: 50px;
+    }
+  }
+}
