@@ -1,46 +1,16 @@
 -# 商品出品完了画面
-.purchase-verification
+.sale-done
   = render partial: 'sub_header'
-  .purchase-verification__header
-    %h2.purchase-title
-      出品が完了しました
+  .sale-done__header
+    %h2.done-title
+      出品が完了しました！
     .done-message
-      %p 発送をお待ちください
-      %p 出品者からの発送通知をお待ち下さい
-    .top-images
-      %ul
-        %li
-          - @product.images.first(1).each do |image|
-            = image_tag image.src.url, class: 'top-image'
-          %ul
-            - @product.images[1..3].each do |image|
-              %li
-                = image_tag image.src.url, class: 'sub-image' 
-    .contents-title
-      %h2.title
-        商品名
-      %h2.detail
-        = @product.name
-    .contents-title
-      %h2.title
-        送料込み
-      %h2.detail
-        = "¥#{@product.price}"
-    .buyer-contents
-      %h2.delivary-title
-        配送先
-      .address-delivary
-        %h2.title
-          住所
-        %h2="〒 #{@product.user.destination.post_code} #{current_user.destination.prefecture} #{current_user.destination.city} #{current_user.destination.address} #{current_user.destination.building_name}"
-      .name-delivary
-        %h2.title
-          名前
-        %h2="#{current_user.family_name} #{current_user.first_name} " 
-      .method-number
-        %h2.title
-          支払方法
-          %h2
+      %p あなたが出品した商品は
+      = link_to "「出品した商品一覧」", user_path(current_user), class:"btn"
+      %p からいつでも見ることが出来ます。
+    .done-contents
+      .continue-sale
+        = link_to "続けて出品する",new_product_path, class:"btn"
       .return-top
         =link_to 'TOPページへ戻る',root_path, class:"return_btn"
   = render partial: 'sub_footer'
