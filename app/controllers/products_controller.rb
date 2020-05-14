@@ -12,7 +12,6 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @images = @product.images.build
     @product.images.new
     @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("選択して下さい")
   end
@@ -35,7 +34,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to root_path
+      render :create
     else
       @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("選択して下さい")
       render :new
