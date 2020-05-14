@@ -1,7 +1,5 @@
 .sale-page
-  .header-sale
-    = link_to root_path do
-      = image_tag(asset_path("logo/logo.png"), class:"logo")
+  = render partial: 'sub_header'
   .main-sale
     .main-sale__input-form
       = form_for @product do |f|
@@ -12,7 +10,7 @@
               %span.necessary 必須
             %p.max-uploads
               最大4枚までアップロードできます
-            .upload-image
+            .post__drop__box__container
               .prev-content
                 - @product.images.each do |image|
                   .preview-box
@@ -22,15 +20,16 @@
                       .delete-box
                         .delete-btn
                           %span 削除
-            .label-content
-              = f.label :"images_attributes_#{@product.images.length}_image", class: "label-box", id: "label-box--#{@product.images.length}" do
-                %pre.label-box__text-visible クリックしてファイルをアップロード
-            .hidden-content
-              = f.fields_for :images do |i|
-                = i.file_field :image, class: "hidden-field"
-                = i.check_box:_destroy, class: "hidden-checkbox"
-              - @product.images.length.upto(3) do |i|
-                %input{name: "product[images_attributes][#{i}][src]", id: "product_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+              .label-content
+                = f.label :"images_attributes_#{@product.images.length}_image", class: "label-box", id: "label-box--#{@product.images.length}" do
+                  %pre.label-box__text-visible クリックしてファイルをアップロード
+              .hidden-content
+                = f.fields_for :images do |i|
+                  = i.file_field :image, class: "hidden-field"
+                  = i.check_box:_destroy, class: "hidden-checkbox"
+                - @product.images.length.upto(3) do |i|
+                  %input{name: "product[images_attributes][#{i}][src]", id: "product_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+                  %input{name: "product[images_attributes][#{i}][_destroy]", id: "product_images_attributes_#{i}__destroy", class:"hidden-checkbox", type:"checkbox", value:"#{i}"}
         %hr.underline
         .product-description
           .product-description__form
@@ -55,17 +54,15 @@
                 %label.sale-info カテゴリー
                 %span.necessary 必須
               .select-form
-                .listing-form-box
-                  .listing-product-detail__category
-                    = f.label 'カテゴリー', class: 'listing-default__label'
-                    %span.listing-default--require 必須
-                    .listing-select-wrapper
-                      .listing-select-wrapper__box
-                        = f.select :category, @category_parent_array, {selected:@product.category.parent.parent.name}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                    .listing-select-wrapper__added#children_wrapper
-                      = f.select :category, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.parent.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
-                    .listing-select-wrapper__added#grandchildren_wrapper
-                      = f.select :category, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
+                .listing-product-detail__category
+                  .listing-select-wrapper
+                    .listing-select-wrapper__box
+                    .select-area
+                      = f.select :category, @category_parent_array, {selected:@product.category.parent.parent.name}, {class: 'sale-info', id: 'parent_category'}
+                  .listing-select-wrapper__added#children_wrapper
+                    = f.select :category, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.parent.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
+                  .listing-select-wrapper__added#grandchildren_wrapper
+                    = f.select :category, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
             .size-form
               .name
                 %label.sale-info サイズ
