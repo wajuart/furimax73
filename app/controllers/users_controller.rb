@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
-    @products = current_user.product
+    
   end
   
   def new
@@ -13,19 +13,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @products = current_user.product
+    @products = Product.includes(:images).order('created_at DESC')
   end
   
   def edit
-    @user = User.find(params[:id])
+    
   end
   
-  def update
-    if @user.update(user_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
-  end  
+  
 
 end
