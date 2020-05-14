@@ -1,7 +1,7 @@
 .single-containers
   %header.single-header
     %h1.single-header__logo
-      = link_to "#" do
+      = link_to root_path do
         =image_tag(asset_path("logo/logo.png"))
     %nav.single-header__progress
       %ol
@@ -26,20 +26,4 @@
       .single-main__container__back
         = link_to "トップへ戻る", root_path
 
-        -# 浅井さんのフッター引用
-        -# レンダーなりで変えるまで固定
-  .footer-sale
-    .contents
-      %ul.contents-list
-        %li.content
-          = link_to "#", class: "private-policy" do
-            プライバシーポリシー
-        %li.content
-          = link_to "#", class: "user-policy" do
-            フリマ利用規約
-        %li.content
-          = link_to "#", class: "point-policy" do
-            ポイントに関する特約
-    = link_to "#", class: "logo" do
-      = image_tag(asset_path("logo/logo.png"), class:"logo-image")
-    .company-name ©︎ FURIMA
+= render partial: 'shared/sub_footer'
