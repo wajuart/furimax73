@@ -121,6 +121,28 @@
     top: 0;
   }
 
+  // 編集カテゴリ子要素のアロー配置
+  .arrow.child-svg{
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    pointer-events: none;
+    position: absolute;
+    right: 425px;
+    top: 1435px;
+  }
+
+  // 編集カテゴリ孫要素のアロー配置
+  .arrow.grandchild-svg{
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    pointer-events: none;
+    position: absolute;
+    right: 425px;
+    top: 1560px;
+  }
+
   //各タイトルの表示
   .title-name {
     color: rgb(136, 136, 136);
@@ -232,6 +254,7 @@
 .listing-select-wrapper__added{
   
   .listing-select-wrapper__box--select{
+  -webkit-appearance: none;
   display: inline-block;
   position: relative;
   width: 100%;

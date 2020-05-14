@@ -59,10 +59,16 @@
                     .listing-select-wrapper__box
                     .select-area
                       = f.select :category, @category_parent_array, {selected:@product.category.parent.parent.name}, {class: 'sale-info', id: 'parent_category'}
-                  .listing-select-wrapper__added#children_wrapper
-                    = f.select :category, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.parent.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
-                  .listing-select-wrapper__added#grandchildren_wrapper
-                    = f.select :category, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
+                      %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true"}
+                        %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
+                    .listing-select-wrapper__added#children_wrapper
+                      = f.select :category, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.parent.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
+                      %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true", class: "child-svg"}
+                        %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
+                    .listing-select-wrapper__added#grandchildren_wrapper
+                      = f.select :category, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
+                      %svg.arrow{width: "24", height: "24", fill: "#888888", rule: "evenodd", viewbox: "0 0 24 24", hidden: "true", class: "grandchild-svg"}
+                        %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .size-form
               .name
                 %label.sale-info サイズ
