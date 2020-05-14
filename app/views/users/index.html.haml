@@ -30,6 +30,6 @@
                   = image_tag product.images.first.src.url
               .name
                 = product.name
-              .create-date
-                = product.created_at  
+              .updated
+                = product.updated_at.strftime("%Y-%m-%d %H:%M") 
         

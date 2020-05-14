@@ -9,7 +9,9 @@
       .nickname-box
         .current-nickname
           = current_user.nickname
-        %input.edit-nickname{placeholder: "ニックネーム編集", type: "text"}
+        .nickname-form
+          = f.text_field :name, class: "edit-nickname", placeholder: "ニックネーム編集", type: "text"  
+       
     .profile-setting
       .profile-setting__text-box
         %textarea.introduction_edit{placeholder: "自己紹介文を入力してください"} 
