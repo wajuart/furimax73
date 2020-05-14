@@ -1,6 +1,6 @@
 -# 商品出品完了画面
 .sale-done
-  = render partial: 'sub_header'
+  = render partial: 'shared/sub_header'
   .sale-done__header
     %h2.done-title
       出品が完了しました！
@@ -13,4 +13,4 @@
         = link_to "続けて出品する",new_product_path, class:"btn"
       .return-top
         =link_to 'TOPページへ戻る',root_path, class:"return_btn"
-  = render partial: 'sub_footer'
+  = render partial: 'shared/sub_footer'

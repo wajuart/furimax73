@@ -1,3 +1,5 @@
+= render partial: 'shared/sub_header'
+
 .purchase-verification
   .purchase-verification__header
     %h2.purchase-title
@@ -60,3 +62,5 @@
             = exp_month + " / " + exp_year
             = link_to new_card_path(current_user.id), class:"cards-change" do
               変更する
+
+  = render partial: 'shared/sub_footer'
