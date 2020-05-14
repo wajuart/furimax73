@@ -1,19 +1,23 @@
 .form
-  .profile-container
-    .profile-head
-      プロフィール
-    .profile-icon
-      %label{class: "photo-label"}
-        .photo-box
-          %input.user_image{type: "file", accept: "photo/*"}
-      .nickname-box
-        %input.nickname{placeholder: "ニックネーム", type: "text"}
-    .profile-setting
-      .profile-setting__text-box
-        %textarea.introduction{placeholder: "自己紹介文を入力してください"} 
-      = link_to root_path do
-        .profile-setting__btn-box
-          %button.edit-btn{type: "submit"} 変更する
+  = form_for @user do |f|
+    .profile-container
+      .profile-head
+        プロフィール
+      .profile-top 
+        .image-form
+          = f.file_field :image, class: 'user-image', placeholder: '新しいニックネーム'
+          -# %input.user_image{type: "file", accept: "photo/*"}
+        .nickname-box
+          .current-nickname
+            = current_user.nickname
+          = f.text_field :nickname, class: 'edit-nickname', placeholder: '新しいニックネーム'
+      .profile-setting
+        .text-form
+          = f.text_area :introduction, class: 'introduction_edit', placeholder: '自己紹介文を入力してください'
+        .btn-form
+          = f.submit "変更する", class:"edit-btn"
+          -# .profile-setting__btn-box
+          -#   %button.edit-btn{type: "submit"} 変更する
 
 
 

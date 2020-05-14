@@ -34,27 +34,23 @@
             height: 48px;
             width: 100%;
             padding: 16px;
+            display: flex;
             border-bottom: solid thin #ebebeb;
+            position: relative;
             &:hover {
               background-color: #f8f8f8;
               color:#3CCACE;
               font-weight: bold;
-            }
-          }
-          &__item-last {
-            background-color: #ffffff;
-            font-size: 14px;
-            height: 48px;
-            width: 100%;
-            padding: 16px;
-            &:hover {
-              background-color: #f8f8f8;
-              color:#3CCACE;
-              font-weight: bold;
-            }
+            }  
+            .icon-arrow-right {
+              position: absolute;
+              top: 50%;
+              right: 16px;
+              color: #ccc;
+              transform: translate(0, -50%);
+              }
           }
         }
-        
         &__head {
           color: #3CCACE;
           font-weight: bold;
@@ -63,7 +59,6 @@
           width: 100%;
           margin-top: 30px;
           padding: 16px;
-
         }
       }  
     }
@@ -77,20 +72,25 @@
         display: flex;
         justify-content: center;
         .user-icon {
-          background-color: rgb(255, 247, 240);
-          background-image: url(https://pics.prcm.jp/dona1118/82181124/png/82181124.png);
-          background-size: 100%;
+          background-color: #fff0f0;
           height: 160px;
           width: 160px;
-          margin-right: 40px;
           border: solid thin;
-          border-radius: 50%;
+          border-radius: 30%;
+          img {
+            height: 160px;
+            width: 130px;
+            display: block;
+            margin: 0 auto;
+          }
         }
         .trade-info {
           width: 300px;
-          &__user-name {
+          margin-left: 40px;
+          &__nickname {
+            width: 100%;
             font-size: 24px;
-            margin: 24px 0 30px 0;
+            margin: 24px 0 30px;
             text-align: center;
           }
           &__count {
@@ -143,12 +143,34 @@
           .item {
             height: 80px;
             padding: 16px;
+            font-size: 18px;
             border-bottom: solid thin #ebebeb;
+            position: relative;
+            display: flex;
             &:hover {
               background-color: #f8f8f8;
               color:#3CCACE;
               font-weight: bold;
             }
+            .image-box {
+              border: solid thin #cccccc;
+              height: 50px;
+              width: 50px;
+              margin: 0 30px 0 10px; 
+              img {
+                width: 100%;
+                height: 50px;
+                object-fit: contain;
+              } 
+            }
+            .name {
+              font-size: 18px;
+            }
+            .updated {
+              position: absolute;
+              right: 20px;
+              font-size: 16px;
+            }  
           }
         }
       }      
@@ -171,4 +193,8 @@
   color: #222222;
   text-decoration: none;
   line-height: 45px;
-}  
+}
+
+.user-icon-box a {
+  color: #000;
+}

@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function(){
  
   $('.trade-tab li').click(function() {
  

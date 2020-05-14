@@ -2,15 +2,13 @@
   %section.SearchView__result
     %h2.head
       検索結果
+    %h3.word
+      = "' #{params[:keyword]} '"
     .products
-      .products__head
-        %h3.title
-          // 検索ワード挿入
-          シャネル
       .products__lists
         - @products.each do |product|
           .list
-            = link_to "show" do
+            = link_to product_path(product) do
               %figure.list-img
                 = image_tag product.images.first.src.url
               .list-body

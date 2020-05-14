@@ -1,0 +1,35 @@
+.user_intro
+  .profile-container
+    .profile-head
+      プロフィール
+    .profile-icon
+      %label{class: "photo-label"}
+        .photo-box
+          %input.user_image{type: "file", accept: "photo/*"}
+      .profile_right    
+        .nickname
+          = current_user.nickname
+        %ul.sell_info
+          %li.title
+            出品数
+          %li.count
+            25
+    .profile-setting
+      .profile-setting__text-box
+        .introduction
+    .sell-tab
+      出品リスト
+  
+    .tab-area
+      - @products.each do |product|
+        %ul.list-show
+          = link_to product_path(product) do
+            %li.item
+              .image-box
+                .img
+                  = image_tag product.images.first.src.url
+              .name
+                = product.name
+              .updated
+                = product.updated_at.strftime("%Y-%m-%d %H:%M") 
+        
