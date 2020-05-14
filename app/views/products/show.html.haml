@@ -31,7 +31,7 @@
                 %tr
                   %th 出品者
                   %td
-                    = link_to @product.user.nickname, users_path(current_user)
+                    = link_to @product.user.nickname, users_path(@product.user.id)
                 %tr
                   %th カテゴリー
                   %td

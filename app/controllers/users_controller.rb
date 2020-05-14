@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-    # @products = Product.includes(:images).order('created_at DESC')
     @products = current_user.products
+    # user = User.find(params[:id])
+    # user = User.includes(:products)
+    # @products = Product.find(params[:id])
+    # @nickname = user.nickname
   end
   
   def new
@@ -13,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @products = Product.includes(:images).order('created_at DESC')
     @products = current_user.products
   end
   
@@ -21,6 +23,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def update
+  
+  end  
   
 
 end
