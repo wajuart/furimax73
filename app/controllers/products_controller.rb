@@ -65,7 +65,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to root_path
     else
-      redirect_to edit_product_path(params[:id])
+      redirect_to edit_product_path(params[:id]), flash: { alert: "編集に失敗しました"}
     end
   end
 

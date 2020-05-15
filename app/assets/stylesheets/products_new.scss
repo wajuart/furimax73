@@ -169,6 +169,14 @@
   display: block;
 }
 
+  // edit失敗時アラート
+  div.flash-item{
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    background: red;
+  }
+
 //画像投稿のJS部分
 .post__drop__box__container{
   display: block;
@@ -207,6 +215,8 @@
       }
     }
   }
+
+
 
   //投稿クリックエリアのCSS
   .label-content{
