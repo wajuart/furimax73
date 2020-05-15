@@ -42,10 +42,13 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("選択して下さい")
-
     grandchild_category = @product.category
     child_category = grandchild_category.parent
+
+    @category_parent_array = ["選択してください"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
 
     @category_children_array = []
     Category.where(ancestry: child_category.ancestry).each do |children|
@@ -62,21 +65,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to root_path
     else
-      @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("選択して下さい")
-
-      grandchild_category = @product.category
-      child_category = grandchild_category.parent
-  
-      @category_children_array = []
-      Category.where(ancestry: child_category.ancestry).each do |children|
-        @category_children_array << children
-      end
-  
-      @category_grandchildren_array = []
-      Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
-        @category_grandchildren_array << grandchildren
-      end
-      render :edit
+      redirect_to edit_product_path(params[:id])
     end
   end
 
@@ -96,7 +85,7 @@ class ProductsController < ApplicationController
     if @card.blank?
       flash.now[:alert] = 'カードを登録してください。'
     else
-      Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       #保管した顧客IDでpayjpから情報取得
       customer = Payjp::Customer.retrieve(@card.customer_id)
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
@@ -105,7 +94,7 @@ class ProductsController < ApplicationController
   end
 
   def pay
-    Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     charge = Payjp::Charge.create(
     amount: @product.price,
     customer: @card.customer_id,
@@ -120,7 +109,7 @@ class ProductsController < ApplicationController
   end
 
   def done
-    Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     #保管した顧客IDでpayjpから情報取得
     customer = Payjp::Customer.retrieve(@card.customer_id)
     #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
