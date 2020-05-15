@@ -9,7 +9,6 @@ class ProductsController < ApplicationController
     @products2 = Product.includes(:images).order('created_at ASC').limit(3)
   end
 
-
   def new
     unless user_signed_in?
       flash[:alert] = "ログインしてください"
