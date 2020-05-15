@@ -11,6 +11,9 @@ class ProductsController < ApplicationController
 
 
   def new
+    unless user_signed_in?
+      redirect_to root_path
+    end
     @product = Product.new
     @product.images.new
     @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("選択して下さい")
@@ -96,7 +99,7 @@ class ProductsController < ApplicationController
     if @card.blank?
       flash.now[:alert] = 'カードを登録してください。'
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
       #保管した顧客IDでpayjpから情報取得
       customer = Payjp::Customer.retrieve(@card.customer_id)
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
@@ -105,7 +108,7 @@ class ProductsController < ApplicationController
   end
 
   def pay
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
     charge = Payjp::Charge.create(
     amount: @product.price,
     customer: @card.customer_id,
@@ -120,7 +123,7 @@ class ProductsController < ApplicationController
   end
 
   def done
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
     #保管した顧客IDでpayjpから情報取得
     customer = Payjp::Customer.retrieve(@card.customer_id)
     #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
