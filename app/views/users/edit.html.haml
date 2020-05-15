@@ -7,7 +7,8 @@
         プロフィール
       .profile-top 
         .image-form
-          = f.file_field :image, class: 'user-image', placeholder: '新しいニックネーム'
+          = f.label :image, class: "user-image" do
+            = f.file_field :image, class: 'hidden'
         .nickname-box
           .current-nickname
             = current_user.nickname

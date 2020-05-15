@@ -5,9 +5,8 @@
     .profile-head
       プロフィール
     .profile-icon
-      %label{class: "photo-label"}
-        .photo-box
-          %input.user_image{type: "file", accept: "photo/*"}
+      .photo-box
+        .user_image
       .profile_right    
         .nickname
           = current_user.nickname
@@ -19,6 +18,11 @@
     .profile-setting
       .profile-setting__text-box
         .introduction
+          %p はじめまして！
+          %br 未使用品を中心に出品をさせていただきます。
+          %br 非喫煙者で、ペットも飼っておりません。
+          %br 即購入は大歓迎です！
+          %br よろしくお願いします。
     .sell-tab
       出品リスト
   
