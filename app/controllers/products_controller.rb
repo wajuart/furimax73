@@ -9,8 +9,11 @@ class ProductsController < ApplicationController
     @products2 = Product.includes(:images).order('created_at ASC').limit(3)
   end
 
-
   def new
+    unless user_signed_in?
+      flash[:alert] = "ログインしてください"
+      redirect_to root_path
+    end
     @product = Product.new
     @product.images.new
     @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("選択して下さい")

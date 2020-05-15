@@ -12,6 +12,9 @@
           .list
             = link_to product_path(product) do
               %figure.list-img
+                -if product.buyer_id.present? 
+                  %p.sold-out
+                    SOLD OUT
                 = image_tag product.images.first.src.url
               .list-body
                 %h3.name
