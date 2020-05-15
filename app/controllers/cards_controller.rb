@@ -9,7 +9,7 @@ class CardsController < ApplicationController
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
-    Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
 
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -42,7 +42,7 @@ class CardsController < ApplicationController
     if @card.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
@@ -57,7 +57,7 @@ class CardsController < ApplicationController
      # 購入した際の情報を元に引っ張ってくる
       @card = current_user.credit_card
      # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
-     Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
+     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
      # キーをセットする(環境変数においても良い)
       Payjp::Charge.create(
       amount: @product.price, #支払金額
