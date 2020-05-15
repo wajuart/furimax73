@@ -123,24 +123,22 @@
 
   // 編集カテゴリ子要素のアロー配置
   .arrow.child-svg{
-    position: absolute;
     bottom: 0;
     margin: auto;
     pointer-events: none;
     position: absolute;
-    right: 425px;
-    top: 1435px;
+    right: 16px;
+    top: 16px;
   }
 
   // 編集カテゴリ孫要素のアロー配置
   .arrow.grandchild-svg{
-    position: absolute;
     bottom: 0;
     margin: auto;
     pointer-events: none;
     position: absolute;
-    right: 425px;
-    top: 1560px;
+    right: 16px;
+    top: 16px;
   }
 
   //各タイトルの表示
@@ -252,7 +250,7 @@
 
 // JSに効かせてる子要素、孫要素のセレクトボックスのレイアウト
 .listing-select-wrapper__added{
-  
+  position: relative;
   .listing-select-wrapper__box--select{
   -webkit-appearance: none;
   display: inline-block;
