@@ -3,6 +3,7 @@
   .main-sale
     .main-sale__input-form
       = form_for @product do |f|
+        = render "devise/shared/error_messages", resource: @product
         .sale-image
           .sale-image__form
             .image-title
@@ -21,14 +22,14 @@
                         .delete-btn
                           %span 削除
               .label-content
-                = f.label :"images_attributes_#{@product.images.length}_image", class: "label-box", id: "label-box--#{@product.images.length}" do
+                = f.label :"images_attributes_#{@product.images.count}_src", class: "label-box", id: "label-box--#{@product.images.count}" do
                   %pre.label-box__text-visible クリックしてファイルをアップロード
               .hidden-content
                 = f.fields_for :images do |i|
-                  = i.file_field :image, class: "hidden-field"
+                  = i.file_field :src, class: "hidden-field"
                   = i.check_box:_destroy, class: "hidden-checkbox"
                 - @product.images.length.upto(3) do |i|
-                  %input{name: "product[images_attributes][#{i}][src]", id: "product_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+                  %input{name: "product[images_attributes][#{i}][src]", id: "product_images_attributes_#{i}_src", class:"hidden-field", type:"file"}
                   %input{name: "product[images_attributes][#{i}][_destroy]", id: "product_images_attributes_#{i}__destroy", class:"hidden-checkbox", type:"checkbox", value:"#{i}"}
         %hr.underline
         .product-description
