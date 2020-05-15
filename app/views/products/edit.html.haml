@@ -1,8 +1,12 @@
+.flash-item
+  - if flash
+    = flash[:alert]
 .sale-page
   = render partial: 'shared/sub_header'
   .main-sale
     .main-sale__input-form
       = form_for @product do |f|
+        = render "devise/shared/error_messages", resource: @product
         .sale-image
           .sale-image__form
             .image-title
