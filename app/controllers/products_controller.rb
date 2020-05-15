@@ -88,7 +88,7 @@ class ProductsController < ApplicationController
     if @card.blank?
       flash.now[:alert] = 'カードを登録してください。'
     else
-      Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
       #保管した顧客IDでpayjpから情報取得
       customer = Payjp::Customer.retrieve(@card.customer_id)
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
@@ -97,7 +97,7 @@ class ProductsController < ApplicationController
   end
 
   def pay
-    Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     charge = Payjp::Charge.create(
     amount: @product.price,
     customer: @card.customer_id,
@@ -112,7 +112,7 @@ class ProductsController < ApplicationController
   end
 
   def done
-    Payjp.api_key = "sk_test_4c3fb1f98f88fba0a8dcba0b"
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     #保管した顧客IDでpayjpから情報取得
     customer = Payjp::Customer.retrieve(@card.customer_id)
     #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
