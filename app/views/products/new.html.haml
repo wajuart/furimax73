@@ -19,7 +19,7 @@
               .hidden-content
                 = f.fields_for :images do |i|
                   = i.file_field :src, class: "hidden-field"
-                  = i.check_box:_destroy, class: "hidden-checkbox"
+                  %input{name: "product[images_attributes][0][_destroy]", id: "product_images_attributes_0__destroy", class:"hidden-checkbox", type:"checkbox", value:"0"}
                 - @product.images.length.upto(3) do |i|
                   %input{name: "product[images_attributes][#{i}][src]", id: "product_images_attributes_#{i}_src", class:"hidden-field", type:"file"}
                   %input{name: "product[images_attributes][#{i}][_destroy]", id: "product_images_attributes_#{i}__destroy", class:"hidden-checkbox", type:"checkbox", value:"#{i}"}
