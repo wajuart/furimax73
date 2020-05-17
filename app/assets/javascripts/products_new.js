@@ -1,6 +1,5 @@
 $(document).on('turbolinks:load', function(){
   $(function(){
-
     //プレビューのhtmlを定義
     function buildHTML(count) {
       var html = `<div class="preview-box" id="preview-box__${count}">
@@ -82,8 +81,26 @@ $(document).on('turbolinks:load', function(){
         } 
         //ラベルのwidth操作
         setLabel();
-        //ラベルのidとforの値を変更
-        if(count < 4){
+
+        //チェックボックスの有無を確認し、チェックが入っているチェックボックスのvalueを取得する
+        var check = [];
+        var checkbox = document.getElementsByClassName("hidden-checkbox");
+
+        //チェックボックスの数だけループを回す
+        for (let i = 0; i < checkbox.length; i++){
+          if(checkbox[i].checked){
+            check.push(checkbox[i].value);
+          }
+        }
+
+        //チェックが入っているチェックボックスの内、先頭の値を取得
+        var value = check[0];
+
+        // //ラベルのidとforの値を変更
+        if (value != null){
+          //チェックボックスにチェックが入っている場合、ラベルのオプションをチェックボックスのvalueの値に更新する
+          $('.label-box').attr({id: `label-box--${value}`,for: `product_images_attributes_${value}_src`});
+        } else if(count < 4){
           //プレビューの数でラベルのオプションを更新する
           $('.label-box').attr({id: `label-box--${count}`,for: `product_images_attributes_${count}_src`});
         }
