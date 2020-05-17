@@ -16,13 +16,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create(user_params)
-    # @user = User.new(user_params)
+    # User.create(user_params)
+    @user = User.new(user_params)
   end  
 
   def show
     @products = current_user.products
-    # @products2 = user.products
   end
   
   def edit

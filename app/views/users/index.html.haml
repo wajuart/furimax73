@@ -6,11 +6,11 @@
       プロフィール
     .profile-icon
       .photo-box
-       - @users.each do |user|
-          .user_image
+      -#  - @users.each do |user|
+        .user_image
             -# = image_tag @user.user_images
-            = image_tag @user.user_image.url
-            -# = current_user.user_image
+            -# = image_tag @user.user_image.url
+            = current_user.user_image
       .profile_right    
         .nickname
           = current_user.nickname
