@@ -1,14 +1,14 @@
 = render partial: 'shared/main_header'
 
 .form
-  = form_for @user do |f|
+  = form_with(model: @user, local: true) do |f|
     .profile-container
       .profile-head
         プロフィール
       .profile-top 
         .image-form
           = f.label :image, class: "user-image" do
-            = f.file_field :image, class: 'hidden'
+            = f.file_field :user_image, class: 'hidden'
         .nickname-box
           .current-nickname
             = current_user.nickname
@@ -17,7 +17,7 @@
         .text-form
           = f.text_area :introduction, class: 'introduction_edit', placeholder: '自己紹介文を入力してください'
         .btn-form
-          = f.submit "変更する", class:"edit-btn"
+          = f.submit "変更する", class:"edit-btn", data: { confirm: "登録しますか？"}
 
 = render partial: 'shared/main_footer'
 

@@ -128,7 +128,10 @@
       .user-icon-box
         = link_to edit_user_path(current_user) do
           .user-icon
-            = image_tag asset_path("icon/business_man.png")
+            -# = image_tag @user.user_image
+            = current_user.user_image
+            -# = image_tag @user.user_image.to_s
+            -# = image_tag asset_path("icon/business_man.png")
         .trade-info
           .trade-info__nickname
             = current_user.nickname

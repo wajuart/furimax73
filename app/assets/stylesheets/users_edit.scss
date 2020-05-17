@@ -40,7 +40,7 @@
           .hidden { 
             height: 100%;
             width: 100%;
-            display: none;
+            // display: none;
           }
         }
         }  
@@ -50,7 +50,7 @@
         .current-nickname {
           height: 48px;
           width: 220px;
-          font-size: 30px;
+          font-size: 24px;
           font-weight: lighter;
           text-align: center;
           margin: 15px auto 0;
@@ -59,7 +59,7 @@
           background-color: #ffffff;
           height: 48px;
           width: 220px;
-          font-size: 20px;
+          font-size: 18px;
           font-weight: lighter;
           border: solid thin;
           border-radius: 5px;
