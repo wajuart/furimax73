@@ -47,7 +47,7 @@
               .name
                 %label.sale-info 商品の説明
                 %span.necessary 必須
-              = f.text_area :description, class: "sale-info", rows: "7", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",  maxlength: "1000", required: ""
+              = f.text_area :description, class: "sale-info", rows: "7", maxlength: "1000", required: "", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
               .counter 0/1000
         %hr.underline
         .product-detail
@@ -163,7 +163,8 @@
                 .price-name
                   %label.sale-info 販売価格
                   %span.necessary 必須
-                %span.yen ￥
+                %span.yen
+                  %i.fas.fa-yen-sign
                 .yen-form
                   .yen-form__box
                     = f.number_field :price, class:"yen", placeholder: "0", type: "number", autocomplete: "off", min: "500", max: "9999999", required: ""
