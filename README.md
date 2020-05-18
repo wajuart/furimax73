@@ -6,40 +6,40 @@
 ## 開発状況
 ・開発環境
 
-  開発言語：
-    Ruby/Ruby on Railsi
-  開発ツール：
-    Github/AWS/Visual Studio Code
-  データベース：
-    MySQL
+  開発言語：  
+    Ruby/Ruby on Railsi  
+  開発ツール:  
+    Github/AWS/Visual Studio Code  
+  データベース：  
+    MySQL  
 
 
 ・開発期間
 
-  開発期間：
-    28日間(4/18 ~ 5/15 )
-  平均作業時間：
-    9時間/1日
+  開発期間：  
+    28日間(4/18 ~ 5/15 )  
+  平均作業時間：  
+    9時間/1日  
 
 
 ・開発体制
 
-  人数：
-    4人
-  開発方式：
-    アジャイル型開発（スクラム）
-  タスク管理：
-    Trelloによるタスク管理
+  人数：  
+    4人  
+  開発方式：  
+    アジャイル型開発（スクラム）  
+  タスク管理：  
+    Trelloによるタスク管理  
 
 
-・動作概要
-  接続先情報
-  URL:
-    http://18.180.148.8/
-  ID:
-    admin
-  Pass:
-    2222
+・動作概要  
+  接続先情報  
+  URL:  
+    http://18.180.148.8/  
+  ID:  
+    admin  
+  Pass:  
+    2222  
 
 ## users_table
 
