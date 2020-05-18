@@ -6,7 +6,7 @@
 ## 開発状況
 - 開発環境
 
--- 開発言語：  
+  - 開発言語：  
     Ruby/Ruby on Railsi  
   開発ツール:  
     Github/AWS/Visual Studio Code  
