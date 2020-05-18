@@ -4,16 +4,6 @@ class UsersController < ApplicationController
     @products = current_user.products
   end
   
-  def new
-    @product = Product.new
-    @images = @product.images.build
-    @product.images.new
-    @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("選択して下さい")
-  end
-
-  def create
-  end  
-
   def show
     @products = current_user.products
   end
