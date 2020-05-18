@@ -23,6 +23,7 @@
             height: 48px;
             width: 100%;
             padding: 16px;
+            list-style: none;
             &:hover {
               background-color: rgba(60, 201, 206, 0.514);
               font-weight: bold;
@@ -72,15 +73,15 @@
         display: flex;
         justify-content: center;
         .user-icon {
-          background-color: #fff0f0;
+          background-color: rgb(255, 246, 246);
           height: 160px;
           width: 160px;
+          padding: 5px;
           border: solid thin;
-          border-radius: 30%;
+          border-radius: 12%;
           img {
-            height: 160px;
-            width: 130px;
-            display: block;
+            height: 100%;
+            width: 100%;
             margin: 0 auto;
             object-fit: contain;
           }

@@ -26,14 +26,20 @@
       display: flex;
       justify-content: center;
       .image-form {
-        background-color: #fff0f0;
-        background-image: url(https://4.bp.blogspot.com/-xN3OofpDu2A/XAnvN3Vpj-I/AAAAAAABQmA/guSSixGZ6cYFey2lgEUnc5q3mEUj6quOACLcBGAs/s800/business_man1_1_smile.png);
-        background-size: 100%;
+        background-color: rgb(255, 246, 246);
         height: 110px;
         width: 110px;
         border: solid thin;
-        border-radius: 30%;
+        border-radius: 12%;
         margin: 10px 20px 0 0;
+        padding: 3px;
+        img {
+          height: 100%;
+          width: 100%;
+          display: block;
+          margin: 0 auto;
+          object-fit: contain;
+         } 
         .user-image { 
           height: 100%;
           width: 100%;
@@ -50,7 +56,7 @@
         .current-nickname {
           height: 48px;
           width: 220px;
-          font-size: 30px;
+          font-size: 24px;
           font-weight: lighter;
           text-align: center;
           margin: 15px auto 0;
@@ -59,7 +65,7 @@
           background-color: #ffffff;
           height: 48px;
           width: 220px;
-          font-size: 20px;
+          font-size: 18px;
           font-weight: lighter;
           border: solid thin;
           border-radius: 5px;

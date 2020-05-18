@@ -1,23 +1,23 @@
 = render partial: 'shared/main_header'
 
 .form
-  = form_for @user do |f|
+  = form_with(model: @user, local: true) do |f|
     .profile-container
-      .profile-head
-        プロフィール
+      .profile-head プロフィール 編集
       .profile-top 
         .image-form
-          = f.label :image, class: "user-image" do
-            = f.file_field :image, class: 'hidden'
+          = f.label :user_image, class: "user-image" do
+            = image_tag current_user.user_image.url
+            = f.file_field :user_image, class: 'hidden'
         .nickname-box
           .current-nickname
             = current_user.nickname
           = f.text_field :nickname, class: 'nickname-form', placeholder: '新しいニックネーム'
       .profile-setting
         .text-form
-          = f.text_area :introduction, class: 'introduction_edit', placeholder: '自己紹介文を入力してください'
+          = f.text_area :introduction, class: "introduction_edit", rows: "7", maxlength: "1000", placeholder: "自己紹介（1,000文字以内）\n\n例）\nはじめまして！\n\n未使用品を中心に出品をさせていただきます。\n非喫煙者で、ペットは飼っておりません。\n即購入は大歓迎です！\n\nよろしくお願いします。"
         .btn-form
-          = f.submit "変更する", class:"edit-btn"
+          = f.submit "変更する", class:"edit-btn", data: { confirm: "この内容で登録しますか？"}
 
 = render partial: 'shared/main_footer'
 
