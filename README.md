@@ -7,11 +7,11 @@
 - 開発環境
 
   - 開発言語：  
-    Ruby/Ruby on Railsi  
-  開発ツール:  
-    Github/AWS/Visual Studio Code  
-  データベース：  
-    MySQL  
+    - Ruby/Ruby on Railsi  
+  - 開発ツール:  
+    - Github/AWS/Visual Studio Code  
+  - データベース：  
+    - MySQL  
 
 
 ・開発期間
