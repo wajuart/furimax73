@@ -45,6 +45,8 @@
 
 ## ER図
 
+![ER図](app/assets/images/ER.png)
+
 
 ## users_table
 
