@@ -2,30 +2,22 @@
 
 .user_intro
   .profile-container
-    .profile-head
-      プロフィール
+    .profile-head プロフィール
     .profile-icon
       .photo-box
-      -#  - @users.each do |user|
         .user_image
-            -# = image_tag @user.user_images
-            -# = image_tag @user.user_image.url
-            = current_user.user_image
+          = image_tag current_user.user_image.url
       .profile_right    
         .nickname
           = current_user.nickname
         %ul.sell_info
-          %li.title
-            出品数
-          %li.count
-            25
+          %li.title 出品数
+          %li.count 25
     .profile-setting
       .profile-setting__text-box
         .introduction
-          = @current_user.introduction
-    .sell-tab
-      出品リスト
-  
+          = current_user.introduction
+    .sell-tab 出品リスト
     .tab-area
       - @products.each do |product|
         %ul.list-show

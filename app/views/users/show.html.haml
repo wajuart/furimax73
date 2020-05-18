@@ -5,122 +5,102 @@
     .side-var
       .mypage-nav
         %ul.mypage-nav__list
-          %li.mypage-nav__list__item-top
-            マイページ
+        = link_to user_path do
+          %li.mypage-nav__list__item-top マイページ
           = link_to new_product_path do   
             %li.mypage-nav__list__item
-              .item-name
-                出品する
+              .item-name 出品する
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                出品した商品-出品中
+              .item-name 出品した商品-出品中
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                出品した商品-取引中
+              .item-name 出品した商品-取引中
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                出品した商品-売却済み
+              .item-name 出品した商品-売却済み
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                購入した商品-取引中
+              .item-name 購入した商品-取引中
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                購入した商品-過去の取引
+              .item-name 購入した商品-過去の取引
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                購入した商品-売却済み
+              .item-name 購入した商品-売却済み
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                評価一覧
+              .item-name 評価一覧
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                お問い合わせ
+              .item-name お問い合わせ
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x                                                                  
 
-        %h3.mypage-nav__head
-          FURIペイ
+        %h3.mypage-nav__head FURIペイ
         %ul.mypage-nave__list
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                売上・振込申請
+              .item-name 売上・振込申請
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x 
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                ポイント
+              .item-name ポイント
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x       
                
-        %h3.mypage-nav__head
-          設定
+        %h3.mypage-nav__head 設定
         %ul.mypage-nave__list
           = link_to edit_user_path(current_user) do
             %li.mypage-nav__list__item
-              .item-name
-                プロフィール
+              .item-name プロフィール
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                発送元・お届け先住所変更
+              .item-name 発送元・お届け先住所変更
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x 
           = link_to new_card_path do   
             %li.mypage-nav__list__item
-              .item-name
-                支払い方法
+              .item-name 支払い方法
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                メール/パスワード
+              .item-name メール/パスワード
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                本人情報
+              .item-name 本人情報
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x 
           = link_to user_path do   
             %li.mypage-nav__list__item
-              .item-name
-                電話番号の確認
+              .item-name 電話番号の確認
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x 
           = link_to destroy_user_session_path, method: :delete do   
             %li.mypage-nav__list__item
-              .item-name
-                ログアウト
+              .item-name ログアウト
               .icon-arrow-right
                 .fa.fa-caret-right.fa-2x        
                 
@@ -128,22 +108,15 @@
       .user-icon-box
         = link_to edit_user_path(current_user) do
           .user-icon
-            -# = image_tag @user.user_image
-            = current_user.user_image
-            -# = image_tag @user.user_image.to_s
-            -# = image_tag asset_path("icon/business_man.png")
+            = image_tag current_user.user_image.url
         .trade-info
           .trade-info__nickname
             = current_user.nickname
           .trade-info__count  
-            .trade-info__count__sell-title
-              出品数
-            .trade-info__count__sell-count
-              25      
-            .trade-info__count__buy-title
-              購入数
-            .trade-info__count__buy-count
-              17
+            .trade-info__count__sell-title 出品数
+            .trade-info__count__sell-count 25      
+            .trade-info__count__buy-title 購入数
+            .trade-info__count__buy-count 17
 
       %ul.trade-tab
         %li.active 出品リスト
@@ -167,8 +140,7 @@
                 .image-box
                   .img
                     = image_tag product.images.first.src.url
-                .name
-                  キーケース
+                .name キーケース
                 .updated
                   = product.updated_at.strftime("%Y-%m-%d %H:%M")   
             = link_to user_path do
@@ -176,8 +148,7 @@
                 .image-box
                   .img
                     = image_tag product.images.first.src.url
-                .name
-                  手帳
+                .name 手帳
                 .updated
                   = product.updated_at.strftime("%Y-%m-%d %H:%M")  
             = link_to user_path do
@@ -185,8 +156,7 @@
                 .image-box
                   .img
                     = image_tag product.images.first.src.url
-                .name
-                  ハンカチ
+                .name ハンカチ
                 .updated
                   = product.updated_at.strftime("%Y-%m-%d %H:%M")  
             = link_to user_path do
@@ -194,8 +164,7 @@
                 .image-box
                   .img
                     = image_tag product.images.first.src.url
-                .name
-                  ブレスレット
+                .name ブレスレット
                 .updated
                   = product.updated_at.strftime("%Y-%m-%d %H:%M") 
 
