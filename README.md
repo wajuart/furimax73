@@ -8,7 +8,7 @@
 
   - 開発言語：  
     - Ruby
-  - フレームワーク  
+  - フレームワーク:  
     - Ruby on Rails  
   - 開発ツール:  
     - Github/AWS/Visual Studio Code  
